@@ -1,0 +1,1 @@
+INSERT INTO product_paidcycles (name, quantity, description, price, image_url, seller_id, category_id, is_sold)
