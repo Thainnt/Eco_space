@@ -1,11 +1,11 @@
-INSERT INTO users (name, email, password)
+INSERT INTO users (name, email, password, is_admin)
   VALUES 
-  ('salim', 'salim@example.com', 'password'),
+  ('salim', 'salim@example.com', 'password', TRUE),
 
-  ('thai ', 'thai@example.com', 'password'),
+  ('thai ', 'thai@example.com', 'password', TRUE),
 
-  ('farid', 'farid@example.com', 'password'),
+  ('farid', 'farid@example.com', 'password', TRUE),
 
-  ('kevin', 'kevin@example.com', 'password'),
+  ('kevin', 'kevin@example.com', 'password', FALSE),
 
-  ('Karen', 'karen@example.com', 'password');
+  ('Karen', 'karen@example.com', 'password', FALSE);
