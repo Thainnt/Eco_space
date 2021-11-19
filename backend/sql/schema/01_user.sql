@@ -5,7 +5,7 @@ CREATE TABLE users (
   name varchar,
   email varchar,
   password varchar,
-  is_admin boolean
+  is_admin boolean DEFAULT FALSE
 );
 
 
