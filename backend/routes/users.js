@@ -1,5 +1,5 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 const userQueries = require("../db/user-queries");
 
 // GET /api/users/
@@ -54,10 +54,10 @@ router.post("/register", (req, res) => {
 });
 
 //logout route
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   req.session.user_id = null;
   req.session.user_name = null;
   res.redirect("/");
-})
+});
 
 module.exports = router;
