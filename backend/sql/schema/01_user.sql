@@ -5,7 +5,6 @@ CREATE TABLE users (
   name varchar,
   email varchar,
   password varchar,
-  created_At timestamp,
   is_admin boolean
 );
 
