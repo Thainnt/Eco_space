@@ -8,9 +8,9 @@ INSERT INTO categories (name)
 
   ('Vehicles'),
 
-  ('Tools')
+  ('Tools'),
   
-  ('Others'),
+  ('Others');
   
 
   

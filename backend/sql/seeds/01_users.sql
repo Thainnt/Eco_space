@@ -9,3 +9,4 @@ INSERT INTO users (name, email, password, is_admin)
   ('kevin', 'kevin@example.com', 'password', FALSE),
 
   ('Karen', 'karen@example.com', 'password', FALSE);
+  
