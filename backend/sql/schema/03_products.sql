@@ -8,8 +8,8 @@ CREATE TABLE products (
   image_url varchar,
   created_at timestamp,
   seller_id integer REFERENCES users(id) ON DELETE CASCADE,
-  category_id integer REFERENCES categories(id) ON DELETE CASCADE,
-  location varchar,
+  category_id integer REFERENCES categories(id) ON DELETE CASCADE DEFAULT NULL,
+  location varchar DEFAULT NULL,
   is_sold boolean,
   is_paid boolean,
   amount integer DEFAULT NULL

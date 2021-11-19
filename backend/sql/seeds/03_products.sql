@@ -20,5 +20,27 @@ INSERT INTO products (name, quantity, description, image_url, seller_id, categor
   
   ('Lego figures', 4, 'Star War Lego figures for free', 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80', 3, 3, 'Vancouver', false, false, NULL),
   
-  ('Spade', 1, 'Nice blue spade with wodden handle', 'https://images.unsplash.com/photo-1534614310503-71f6d476047d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c3BhZGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', 1, 5, 'Quebec', false, false, NULL);
+  ('Spade', 1, 'Nice blue spade with wodden handle', 'https://images.unsplash.com/photo-1534614310503-71f6d476047d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c3BhZGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', 1, 5, 'Quebec', false, false, NULL),
+
+  ('Simple suds jug', 21, 'A sustainable recyclable paper jugs for all your jug needs', 'https://cdn.shopify.com/s/files/1/0412/7332/7770/products/Better_Basics_Simple_Suds_Mandarin_Ever_Dispenser_Cloud_4ce94a05-6984-4d7b-891f-aa9413659c6d_720x.jpg?v=1616632313',1, NULL, NULL, false, true, 60),
+
+  ('Water bottle', 30, 'Made to last. 100% recyclable stainless steel. 12 hrs of insulation', 'https://cdn.shopify.com/s/files/1/0412/7332/7770/products/Better-Basics-Eco-Friendly-Zero-Waste-Refill-Ever-Water-Bottle-Charcoal_720x.jpg?v=1616632365',1,NULL, NULL, false, true, 40),
+
+  ('Jar', 26, '100% recyclable stainless steel. An insulated jar for all your needs', 'https://cdn.shopify.com/s/files/1/0412/7332/7770/products/PDP-Holiday_1080x1080px_-3_1da4abbb-785a-4a49-8000-19ed227be995_590x.png?v=1635539770',1, NULL, NULL, false, true, 35),
+
+  ('Mug',10, '100% recyclable stainless steel with 12hrs of insulation. Whatever your jam is, this is your go-to mug', 'https://cdn.shopify.com/s/files/1/0412/7332/7770/products/PDP-Holiday_1080x1080px_-3_bcb577d2-4c1c-4bb7-9339-d87053644874_590x.png?v=1635538443', 1, NULL, NULL, false, true, 40),
+
+  ('Sacs', 50, 'This organic cotton sac is the perfect kit for life on-the-go, the eco way.', 'https://cdn.shopify.com/s/files/1/0412/7332/7770/products/8_720x.png?v=1635367803',1, NULL, NULL, false, true, 15),
+
+  ('Cotton Buds', 60, 'These are 100% cotton swabs made of biodegradable bamboo swabs', 'https://cdn.shopify.com/s/files/1/0024/8787/7745/products/sunnybox-store-cotton-swabs-biodegradable-bamboo-swabs-13627546992753_2000x.jpg?v=1629150323', 1, NULL, NULL, false, true, 20),
+
+  ('Eco speaker', 35, 'A sustainable speaker amplifier made of bamboo', 'https://cdn.shopify.com/s/files/1/0024/8787/7745/products/sustainable-tomorrow-speaker-bamboo-amplifier-13434602782833_2000x.png?v=1579878141',1, NULL, NULL, false, true, 50),
+
+  ('Eco Coffee presser', 29, '100% organic Bamboo french press', 'https://cdn.shopify.com/s/files/1/0024/8787/7745/products/DSC06275-resized_2000x.jpg?v=1629150915', 1, NULL, NULL, false, true, 40),
+
+  ('Eco straws', 10, '100% organic Bamboo straws', 'https://cdn.shopify.com/s/files/1/0024/8787/7745/products/sustainable-tomorrow-drinking-straws-25-pcs-bamboo-straws-set-25-pcs-6266979418225_2000x.png?v=1618998407', 1, NULL, NULL, false, true, 20),
+
+  ('Eco phone case', 50, ' A sustainable phone case', 'https://pelacase.ca/static/e805d28bc7ec79fa949ac8e96d56cf58/1a1d3/IP_XIR_BEE_HONEY_BACK.jpg',1, NULL, NULL, false, true, 10),
+
+  ('Eco Airpods case', 30, 'A sustainable airpods case', 'https://pelacase.ca/static/0b40fb8ebd096db448263315db917dbb/1a1d3/AirPods_LAVENDER_BACK.jpg', 1, NULL, NULL, false, true, 10);
 
