@@ -7,7 +7,7 @@
 
 .navbar__title {
   margin-right: auto;
-  font-size: 150%;
+  font-size: 100%;
   padding: 12px 16px;
 }
 
@@ -26,8 +26,9 @@ ul li {
   padding-right: 1em;
 }
 
-li a {
+a {
   text-decoration: none;
   color: white;
-  font-size: 150%;
+  font-size: 100%;
+  padding: 0.2rem 0.3rem;
 }
