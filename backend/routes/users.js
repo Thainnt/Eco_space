@@ -26,12 +26,16 @@ router.post("/login", (req, res) => {
   userQueries.getUserByEmail(user.email).then((response) => {
     //check if email exists
     if (!response.rows[0]) {
-      res.redirect("/register");
+      return res
+        .status(404)
+        .send({ status: "Error", message: "Can not find email" });
     } else {
-      req.session.user_id = response.rows[0].id;
-      req.session.user_name = response.rows[0].name;
+      // req.session.user_id = response.rows[0].id;
+      // req.session.user_name = response.rows[0].name;
       //have this redirect to appropriate page
       //res.redirect('/?')
+      delete user.password;
+      res.send({ user });
     }
   });
 });
