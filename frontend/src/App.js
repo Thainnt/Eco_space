@@ -1,18 +1,12 @@
-import Freecycle from './components/Freecycle';
+import Freecycle from "./components/Freecycle";
 import { Routes, Route, Link } from "react-router-dom";
-import Navbar from './components/navbar/Navbar';
-
+import Nav from "./components/Pages/Navbar";
 
 function App() {
-  
   return (
     <div className="App">
-      <header className="">
-      <Navbar />
-          
-      </header>
+      <Nav />
     </div>
-    
   );
 }
 
