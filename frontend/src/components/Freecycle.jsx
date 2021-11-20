@@ -4,10 +4,10 @@ import {React, Fragment} from "react"
 
 
 
-export default function Button(props) {
+export default function Freecycle(props) {
   return (
     <>
-    <button>Free Cycle</button>
+    <button>Lets go!</button>
     </>
   )
 }
