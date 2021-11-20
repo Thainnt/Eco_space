@@ -1,8 +1,9 @@
 
-import styles from "../../styles.css"
+// import styles from "../../styles.css"
 import {useNavigate} from 'react-router-dom';
 import { useState } from "react"
 import axios from "axios";
+import Cookies from 'js-cookie'
 
 
 
@@ -18,8 +19,11 @@ function LogIn(props) {
       email: email,
       password: password
     }).then(res => {
-      const user = res.data.user
-      localStorage.setItem('user', JSON.stringify(user) );
+      // console.log("hello", res)
+      const user = res.data
+      // localStorage.setItem('user', JSON.stringify(user) );
+      console.log(user);
+      Cookies.set("username", user.name) //for logout Cookies.set("username", "")
       navigate('/Dashboard')
 
     }).catch((error) => {
