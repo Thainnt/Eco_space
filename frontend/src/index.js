@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Freecycle from "./components/freecycle/Freecycle";
+import Store from "./components/store/Store";
 import Register from "./components/Pages/Register";
 import "./index.css";
 import App from "./App";
@@ -22,6 +23,7 @@ const RouteApp = () => {
   return (
     <Routes>
       <Route path="/" element={<App username={loggedInUserName} />}>
+        <Route exact path="/store" element={<Store />} />
         <Route exact path="/freecycle" element={<Freecycle />} />
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
