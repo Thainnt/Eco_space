@@ -1,33 +1,70 @@
+import { useEffect, useState } from "react"
+import axios from "axios"
+import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 export default function Register(props) {
+  const [name, setName ] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   
-  function validate() {
 
-  }
+  function handleSubmit(event) {
+    event.preventDefault();
 
-  function submit(event) {
+   
+      axios.post('http://localhost:8080/api/users/register',{
+      name:name,
+      email:email,
+      password:password
+    }).then(res => {
+      const user = res.data
+      console.log("Register data",res.data,res.data.name);
+      Cookies.set("username", user.name)
 
-  }
+      navigate('/Dashboard');
+    }).catch(err => {
+      console.log(err);
+    })
+    }
+    
+  
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
 
         <label>
         Name:
-        <input type="text"  name="name" />
+        <input 
+         type="text"
+         requried 
+         value={name}
+         onChange={(e) => setName(e.target.value)}
+         />
         </label>
 
         <label>
         Email:
-        <input type="text"  name="email" />
+        <input 
+         type="email" 
+         value={email}
+         requried 
+         onChange={(e) => setEmail(e.target.value)}
+         />
         </label>
 
         <label>
         Password: 
-        <input type="text"  name="password" />
+        <input
+         type="password"
+         requried 
+         value={password}
+         onChange={(e) => setPassword(e.target.value)}
+         />
         </label>
-
+        <button>Register</button>
     
        
 
