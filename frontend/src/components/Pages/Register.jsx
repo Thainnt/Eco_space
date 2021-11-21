@@ -12,8 +12,6 @@ export default function Register(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-
-   
       axios.post('http://localhost:8080/api/users/register',{
       name:name,
       email:email,
@@ -22,7 +20,6 @@ export default function Register(props) {
       const user = res.data
       console.log("Register data",res.data,res.data.name);
       Cookies.set("username", user.name)
-
       navigate('/Dashboard');
     }).catch(err => {
       console.log(err);
@@ -65,10 +62,6 @@ export default function Register(props) {
          />
         </label>
         <button>Register</button>
-    
-       
-
-        
       </form>
     </div>
   )
