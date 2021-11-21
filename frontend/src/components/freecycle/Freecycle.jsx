@@ -5,33 +5,29 @@ import Item from "./Item";
 import axios from "axios";
 
 export default function Freecycle() {
-
-  const categories = 
-    [
-      {id: 1, name: 'Furnitures'},
-      {id: 2, name: 'Electrics/Electronics'},
-      {id: 3, name: 'Sports/Recreations'},
-      {id: 4, name: 'Vehicles'},
-      {id: 5, name: 'Tools'},
-      {id: 6, name: 'Others'}
-    ];
   
-  const categoryList = categories.map((category) =>
+  const [state, setState] = useState({
+    categories: [],
+    items: []
+  });
+  
+  useEffect(() => {
+    Promise.all([
+      axios.get("http://localhost:8080/api/freecycle/categories"),
+      axios.get("http://localhost:8080/api/freecycle/products")
+    ]).then(all => {
+      console.log(all);
+      // setState(prev => ({...prev, category:all[0].data, itemList:all[1].data}))  // this is an array of all products you can do a map on it
+      setState({categories:all[0].data.categories, items:all[1].data.products});
+    })
+  },[]);
+  
+  console.log('product list: ', state.items);
+  const categoryList = state.categories.map((category) =>
   <Dropdown.Item href="#/action-1">{category.name}</Dropdown.Item>
   );
 
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://localhost:8080/api/freecycle/products")
-      .then(response => {
-        console.log("this is data",response.data.products)
-        setList(prev => ({...prev, items:response.data.products}))  // this is an array of all products you can do a map on it
-      })
-  },[]);
-  
-  console.log('product list: ', list);
-  const itemList = list.items.map((item) =>
+  const itemList = state.items.map((item) =>
       <Item
         key={item.id}
         name={item.name}
