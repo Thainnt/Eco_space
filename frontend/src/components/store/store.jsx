@@ -13,7 +13,10 @@ const Store = () => {
   })
   return ( 
     // console.log(products)
+    <>
     <h2>Hello these are the products</h2>
+    <p>store items will go here</p>
+    </>
   );
 }
  
