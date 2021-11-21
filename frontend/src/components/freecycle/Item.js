@@ -7,7 +7,7 @@ export default function Item(props) {
   return (
     <li>
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={image_url} alt={name}/>
+        <Card.Img className="items__item-image" variant="top" src={image_url} alt={name}/>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
