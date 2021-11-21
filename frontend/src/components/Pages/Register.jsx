@@ -2,17 +2,22 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import './register.css'
+
 
 export default function Register(props) {
   const [name, setName ] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  
+
+  // const formStyles = {
+  //   color: "blue"
+  // }
 
   function handleSubmit(event) {
     event.preventDefault();
-
+      
    
       axios.post('http://localhost:8080/api/users/register',{
       name:name,
@@ -33,7 +38,7 @@ export default function Register(props) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
 
         <label>
         Name:
