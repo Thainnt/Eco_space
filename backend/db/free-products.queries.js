@@ -12,12 +12,17 @@ const getFreeProductsByCategory = (category_id) => {
 
 const getFreeProductsBylocation = (location) => {
   return db
-    .query(`SELECT * FROM products WHERE location LIKE $1`, [`${location}`])
+    .query(`SELECT * FROM products WHERE location LIKE $1`, [`${location}`]);
 }
 
+const getCategories = () => {
+  return db
+    .query(`SELECT * FROM categories`);
+};
 
 module.exports = {
   getAllFreeProducts,
   getFreeProductsByCategory,
-  getFreeProductsBylocation
+  getFreeProductsBylocation,
+  getCategories
 }

@@ -2,11 +2,12 @@ const express = require("express");
 const router = express.Router();
 const productQueries = require("../db/products.queries");
 const freePQueries = require("../db/free-products.queries");
+// const { response } = require("express");
 
 
 //api/freecycle/
 
-router.get("/Fproducts", (req, res) => {
+router.get("/products", (req, res) => {
   freePQueries.getAllFreeProducts().then((response) => {
     const products = response.rows;
     res.send({ products: products });
@@ -18,7 +19,7 @@ router.get("/Fproducts", (req, res) => {
   })
 })
 
-router.get("/Fcategory", (req, res) => {
+router.get("/category", (req, res) => {
   const category_id = req.body.id
   freePQueries.getFreeProductsByCategory(category_id).then((response) => {
     const products = response.rows;
@@ -31,7 +32,7 @@ router.get("/Fcategory", (req, res) => {
   })
 })
 
-router.get("/Flocation", (req, res) => {
+router.get("/location", (req, res) => {
   const location = req.body.location
   freePQueries.getFreeProductsBylocation(location).then((response) => {
     const products = response.rows;
@@ -43,5 +44,19 @@ router.get("/Flocation", (req, res) => {
     })
   })
 })
+
+router.get("/categories"), (req, res) => {
+  freePQueries.getCategories().then((response) => {
+    console.log('res: ',response);
+    const categories = response.rows;
+    res.send({ categories: categories });
+  })
+  .catch(error => {
+    console.error('error: ', error);
+    res.status(400).send({
+      message:'Failed to get categories'
+    })
+  });
+}
 
 module.exports = router;
