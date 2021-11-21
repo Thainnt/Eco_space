@@ -28,7 +28,7 @@ app.use(
 // routes
 app.use("/api/users", usersRouter);
 app.use("/api/store", storePRouter);
-app.use("api/freecycle", freePRouter);
+app.use("/api/freecycle", freePRouter);
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
