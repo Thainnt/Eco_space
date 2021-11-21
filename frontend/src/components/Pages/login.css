@@ -1,23 +1,6 @@
 .container {
   width:40%;
-}
-.form {
-  display: flex;
-  flex-direction: column;
-  margin:0 auto
-  
-}
-
-.header {
-  font-family: 'Oswald', sans-serif
-}
-.form-field {
-margin-top:20px;
-font-family: 'Oswald', sans-serif;
-}
-
-.password-field {
-  padding-right:30px;
+  margin-top:250px
 }
 
 .button {
@@ -25,29 +8,29 @@ font-family: 'Oswald', sans-serif;
   margin: 25px auto;
   border-radius: 8px;
   background-color: darksalmon;
-  color: black;
+  color: white;
   font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald', sans-serif
 }
 
-input[type=text] {
-  width:100%;
-  border-radius: 8px;
-  border-color: darksalmon ;
+.header {
+  font-family: 'Oswald', sans-serif
 }
+
 input[type=email] {
   width:100%;
   border-radius: 8px;
   border-color: darksalmon ;
+  margin-top:20px ;
 }
 input[type=password] {
   width:100%;
   border-radius: 8px;
   border-color: darksalmon ;
+  margin-top: 20px;
 }
 
-input[type=text]:focus {
-  background-color:#d9d7d7;
-}
+
 
 input[type=email]:focus {
   background-color:#d9d7d7;
