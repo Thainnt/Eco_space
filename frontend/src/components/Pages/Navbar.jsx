@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Cookies from 'js-cookie'
 import {useNavigate} from 'react-router-dom';
+import styles from "../../styles.css"
 
 
 const Nav = (props) => {
@@ -12,7 +13,7 @@ const Nav = (props) => {
   }
   return (
     <nav class='navbar'>
-      
+      <h2>Eco Space</h2>
       <ul>
         <li>
           <Link to="/About">About Us</Link>
