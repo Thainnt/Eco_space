@@ -16,6 +16,7 @@ const Store = () => {
     <>
     <h2>Hello these are the products</h2>
     <p>store items will go here</p>
+    <p>hello</p>
     </>
   );
 }

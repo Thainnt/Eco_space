@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Freecycle from "./components/freecycle/Freecycle";
-import Store from "./components/store/Store";
+import Store from "./components/store/store";
 import Register from "./components/Pages/Register";
 import "./index.css";
 import App from "./App";
