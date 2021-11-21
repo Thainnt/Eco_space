@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom';
 import { useState } from "react"
 import axios from "axios";
 import Cookies from 'js-cookie'
+import "./login.css"
 
 
 
@@ -31,11 +32,12 @@ function LogIn(props) {
     })
   }
   return(
-  <div>
+  <div className="container">
     <div>
       <form onSubmit={handleSubmit}>
+        <h1 className="header">Please log in</h1> 
           <input
-            type="text"
+            type="email"
             value={email}
             required
             placeholder="Email"
@@ -48,7 +50,7 @@ function LogIn(props) {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button>Log In</button>
+          <button className="button">Log In</button>
       </form>
     </div>
   </div>
