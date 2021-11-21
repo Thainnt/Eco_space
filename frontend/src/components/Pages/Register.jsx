@@ -11,10 +11,6 @@ export default function Register(props) {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // const formStyles = {
-  //   color: "blue"
-  // }
-
   function handleSubmit(event) {
     event.preventDefault();
       axios.post('http://localhost:8080/api/users/register',{
@@ -34,39 +30,45 @@ export default function Register(props) {
   
 
   return (
-    <div>
-      <form className="form" onSubmit={handleSubmit}>
+    <div className="container">
+      <h1 className="header">Register</h1>
+      <form  className="form" onSubmit={handleSubmit}>
 
-        <label>
-        Name:
+        <label className="form-field">
+        Name
         <input 
          type="text"
          requried 
          value={name}
          onChange={(e) => setName(e.target.value)}
+         placeholder="Please enter name"
          />
         </label>
 
-        <label>
-        Email:
+        <label className="form-field">
+        Email
         <input 
          type="email" 
          value={email}
          requried 
          onChange={(e) => setEmail(e.target.value)}
+         placeholder="Please enter email"
          />
         </label>
 
-        <label>
-        Password: 
+        <label className="form-field password-field">
+        Password
         <input
          type="password"
          requried 
          value={password}
          onChange={(e) => setPassword(e.target.value)}
+         placeholder="Please enter password"
          />
+         
         </label>
-        <button>Register</button>
+        <button className="button">Register</button>
+        
       </form>
     </div>
   )
