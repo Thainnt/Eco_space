@@ -1,4 +1,4 @@
-import Freecycle from "./components/Freecycle";
+import Freecycle from "./components/freecycle/Freecycle";
 import { Routes, Route, Link, Outlet } from "react-router-dom";
 import Nav from "./components/Pages/Navbar";
 import { useState } from "react";
