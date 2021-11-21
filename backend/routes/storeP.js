@@ -20,12 +20,10 @@ router.get("products/:id", (req, res) => {
   storePQueries.getSingleStoreProduct(prod_id).then((response) => {
     console.log(response);
     if (response.rows.length === 0) {
-      return res
-        .status(404)
-        .send({
-          status: "error",
-          message: `Product not found with the ${prod_id}`,
-        });
+      return res.status(404).send({
+        status: "error",
+        message: `Product not found with the ${prod_id}`,
+      });
     }
     res.send({ product: response.rows[0] });
   });
@@ -51,24 +49,25 @@ router.post("/new", (req, res) => {
     is_sold,
     is_paid,
     amount,
-};
+  };
 
   if (req.body.is_paid) {
     is_paid = req.body.is_paid;
     amount = req.body.amount;
   }
 
-  productQueries.addProduct(product).then((response) => {
-    const newProduct = response.rows[0];
+  productQueries
+    .addProduct(product)
+    .then((response) => {
+      const newProduct = response.rows[0];
 
-    res.send({ ...newProduct });
-  })
-  .catch((error) => {
-    console.log("failed to added user", error)
-    res.status(400).send("can not add user")
-  })
+      res.send({ ...newProduct });
+    })
+    .catch((error) => {
+      console.log("failed to added user", error);
+      res.status(400).send("can not add user");
+    });
 });
-
 
 //products/:id/edit -> frontend
 //products/:id (PUT/PATCH) -> UPDATING A SINGLE POST
