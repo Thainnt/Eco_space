@@ -74,11 +74,11 @@ router.post("/register", (req, res) => {
   })
 });
 
-//logout route
-router.post("/logout", (req, res) => {
-  req.session.user_id = null;
-  req.session.user_name = null;
-  res.redirect("/");
-});
+// //logout route
+// router.post("/logout", (req, res) => {
+//   req.session.user_id = null;
+//   req.session.user_name = null;
+//   res.redirect("/");
+// });
 
 module.exports = router;
