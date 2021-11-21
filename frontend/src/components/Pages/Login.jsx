@@ -42,7 +42,7 @@ function LogIn(props) {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            type="text"
+            type="password"
             value={password}
             required
             placeholder="Password"
