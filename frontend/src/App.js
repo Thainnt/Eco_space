@@ -1,11 +1,17 @@
 import Freecycle from "./components/Freecycle";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
 import Nav from "./components/Pages/Navbar";
+import { useState } from "react";
 
-function App() {
+function App(props) {
+  // const [loggedInUserName, setLoggedInUserName] = useState("")
+  // setTimeout(()=>{
+  //   setLoggedInUserName('yoshi')
+  // }, 3000)
   return (
     <div className="App">
-      <Nav />
+      <Nav loggedInUserName={props.username || ""} />
+      <Outlet />
     </div>
   );
 }

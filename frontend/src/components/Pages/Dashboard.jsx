@@ -1,31 +1,29 @@
 
-import styles from "../../styles.css"
-import Avatar from '@mui/material/Avatar'
-import 'bootstrap/dist/css/bootstrap.css';
-import Button from '@mui/material/Button'
+// import styles from "../../styles.css"
+
+
+
+import Nav from "./Navbar";
 
 import { useEffect, useState } from "react"
 import axios from "axios";
 import useForkRef from "@mui/utils/useForkRef";
 
 
-function Dashboard() {
-  const [user, setUser] = useState({});
+function Dashboard(props) {
+
+  // const [user, setUser] = useState({});
 
 
-  useEffect(() => {
-    const user = localStorage.getItem('user');
-    setUser(JSON.parse(user));
-  }, [])
+  // useEffect(() => {
+  //   const user = localStorage.getItem('user');
+  //   setUser(JSON.parse(user));
+  // }, [])
 
   return(
   <div >
-    <div>
-      <h2>Dashboard</h2>
-      <div>
-        {user.email}
-      </div>
-    </div>
+    <Nav loggedInUserName={props.username || ""} />
+    <p>This is a Dashboard page</p>
   </div>
 
 
