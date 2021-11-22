@@ -1,6 +1,6 @@
 import {React, Fragment, useEffect, useState} from "react";
 import { Dropdown, DropdownButton } from 'react-bootstrap';
-import Item from "./Item";
+import ItemList from "./ItemList";
 import axios from "axios";
 
 export default function Freecycle() {
@@ -19,29 +19,24 @@ export default function Freecycle() {
     })
   },[]);
   
-  console.log('product list: ', state.items);
+  console.log("***==", state.items, "and***", state.categories);
   const categoryList = state.categories.map((category) =>
-  <Dropdown.Item href="#/action-1">{category.name}</Dropdown.Item>
+  <Dropdown.Item href="#">{category.name}</Dropdown.Item>
   );
 
-  const itemList = state.items.map((item) =>
-      <Item
-        key={item.id}
-        name={item.name}
-        image_url={item.image_url}
-        description={item.description}  
-      />
-  );
-  
   return (
     <main className="layout">
       <section className="sidebar">
         <DropdownButton id="dropdown-basic-button" title="Categories">
+        <Dropdown.Item href="#">All</Dropdown.Item>
           {categoryList}
         </DropdownButton>
       </section>
-      <section className="items">
-        <ul>{itemList}</ul>
+      <section className="item-show">
+        {state.items && <ItemList
+          items={state.items}
+          title="Category"
+          />}
       </section>
     </main>
   );
