@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
+import { Container } from "../styles/Container.styled";
 
 const ProductList = (props) => {
   const { products, title } = props
   return ( 
-    <div className="Product-list">
+    <>
       <h2>{title}</h2>
+    <Container>
       {products.map((product) => (
         <div className="product-preview" key={product.id}>
           <Link to={`/products/${product.id}`}>
@@ -22,7 +24,8 @@ const ProductList = (props) => {
         </div>
       ))}
 
-    </div>
+    </Container>
+    </>
   );
 }
  
