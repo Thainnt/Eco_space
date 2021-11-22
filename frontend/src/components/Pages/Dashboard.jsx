@@ -22,7 +22,6 @@ function Dashboard(props) {
 
   return(
   <div >
-    <Nav loggedInUserName={props.username || ""} />
     <p>This is a Dashboard page</p>
   </div>
 

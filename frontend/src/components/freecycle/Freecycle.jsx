@@ -12,10 +12,9 @@ export default function Freecycle() {
   
   useEffect(() => {
     Promise.all([
-      axios.get("http://localhost:8080/api/freecycle/categories"),
-      axios.get("http://localhost:8080/api/freecycle/products")
+      axios.get("/api/freecycle/categories"),
+      axios.get("/api/freecycle/products")
     ]).then(all => {
-      console.log(all);
       setState({categories:all[0].data.categories, items:all[1].data.products});
     })
   },[]);

@@ -13,7 +13,7 @@ export default function Register(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-      axios.post('http://localhost:8080/api/users/register',{
+      axios.post('/api/users/register',{
       name:name,
       email:email,
       password:password

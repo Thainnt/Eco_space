@@ -1,46 +1,13 @@
 import "bootstrap/dist/css/bootstrap.css";
-import Cookies from "js-cookie";
-import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Freecycle from "./components/freecycle/Freecycle";
-import Store from "./components/store/store";
-import Register from "./components/Pages/Register";
-import "./index.css";
+import { BrowserRouter } from "react-router-dom";
+import React from "react";
 import App from "./App";
-import LogIn from "./components/Pages/Login";
-import Dashboard from "./components/Pages/Dashboard";
-
-const RouteApp = () => {
-  const [loggedInUserName, setLoggedInUserName] = useState("");
-  let location = useLocation();
-
-  useEffect(() => {
-    console.log("page name", location);
-    console.log("cookie--->", Cookies.get("username"));
-    setLoggedInUserName(Cookies.get("username"));
-  }, [location]);
-  return (
-    <Routes>
-      <Route path="/" element={<App username={loggedInUserName} />}>
-        <Route exact path="/store" element={<Store />} />
-        <Route exact path="/freecycle" element={<Freecycle />} />
-        <Route exact path="/register" element={<Register />} />
-        <Route path="/login" element={<LogIn />} />
-      </Route>
-      <Route
-        exact
-        path="/Dashboard"
-        element={<Dashboard username={loggedInUserName} />}
-      />
-    </Routes>
-  );
-};
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <RouteApp />
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
