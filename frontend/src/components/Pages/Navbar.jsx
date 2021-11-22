@@ -1,5 +1,4 @@
 import { Routes, Route, Link } from "react-router-dom";
-import Cookies from 'js-cookie'
 import {useNavigate} from 'react-router-dom';
 import styles from "../../styles.css"
 import axios from "axios";
