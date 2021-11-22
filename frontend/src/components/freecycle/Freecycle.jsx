@@ -19,16 +19,15 @@ export default function Freecycle() {
     })
   },[]);
   
-  console.log("***==", state.items, "and***", state.categories);
   const categoryList = state.categories.map((category) =>
-  <Dropdown.Item href="#">{category.name}</Dropdown.Item>
+  <Dropdown.Item key={category.id} href="#">{category.name}</Dropdown.Item>
   );
 
   return (
     <main className="layout">
       <section className="sidebar">
         <DropdownButton id="dropdown-basic-button" title="Categories">
-        <Dropdown.Item href="#">All</Dropdown.Item>
+        <Dropdown.Item key="all" href="#">All</Dropdown.Item>
           {categoryList}
         </DropdownButton>
       </section>

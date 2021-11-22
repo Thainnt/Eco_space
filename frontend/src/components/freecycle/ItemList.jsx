@@ -9,7 +9,7 @@ export default function ItemList(props) {
       <h2>Category</h2>
       {items.map((item) => (
         <div className="item-preview" key={item.id}>
-          <Link to={`/products/${item.id}`}>
+          <Link to={`/freecycle/items/${item.id}`}>
             <div className="item-card">
               <img className="item-image" src={item.image_url} alt={item.name}/>
               <span className="item_content">

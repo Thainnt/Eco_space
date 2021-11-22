@@ -22,6 +22,20 @@ router.get("/products", (req, res) => {
     });
 });
 
+//products/:id (GET)
+router.get("/products/:id", (req, res) => {
+  const prod_id = req.params.id;
+  freePQueries.getSingleProduct(prod_id).then((response) => {
+    if (response.rows.length === 0) {
+      return res.status(404).send({
+        status: "error",
+        message: `Product not found with the ${prod_id}`,
+      });
+    }
+    res.send({ product: response.rows[0] });
+  });
+});
+
 router.get("/category", (req, res) => {
   const category_id = req.body.id;
   freePQueries
