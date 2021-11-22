@@ -7,6 +7,7 @@ import Register from "./components/Pages/Register";
 import LogIn from "./components/Pages/Login";
 import Dashboard from "./components/Pages/Dashboard";
 import ProductsDetails from "./components/store/ProductDetails";
+import GlobalStyles from "./components/styles/Global";
 
 function App() {
   const [loggedInUserName, setLoggedInUserName] = useState("");
@@ -17,6 +18,7 @@ function App() {
   }, [location]);
   return (
     <div className="App">
+      <GlobalStyles />
       <Nav loggedInUserName={loggedInUserName} />
       <Routes>
         <Route exact path="/" element={<div>Home</div>} />
