@@ -1,23 +1,39 @@
 import axios from "axios";
-import { useEffect } from "react";
-// import useFetch from "../useFetch";
+import { useEffect, useState } from "react";
+import StoreItem from "./StoreItem";
+
 
 const Store = () => {
-  // const url = "http://localhost:8080/api/store/products";
-  // const { data: products, isPending, error } = useFetch(url);
+  const [ products, setProducts] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:8080/api/store/products")
       .then(response => {
-        console.log(response.data.products)
+        setProducts(response.data.products)
       })
+  }, [])
+
+  console.log("====>", products)
+  const productItems = products.map((product) => {
+
+    return <StoreItem
+      key={product.id}
+      name={product.name}
+      quantity={product.quantity}
+      description={product.description}
+      image_url={product.image_url}
+      seller_id={product.seller_id}
+      amount={product.amount}
+    />
+
   })
+  console.log("/////",productItems)
   return ( 
-    // console.log(products)
-    <>
-    <h2>Hello these are the products</h2>
-    <p>store items will go here</p>
-    <p>hello</p>
-    </>
+    <section>
+      <p>hello</p>
+      <div>
+      {productItems}
+      </div>
+    </section>
   );
 }
  
