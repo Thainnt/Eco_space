@@ -22,7 +22,7 @@ const Nav = (props) => {
           <Link to="/FreeCycle">Free Goods</Link>
         </li>
         <li>
-          <Link to="/Store">Store</Link>
+          <Link to="/store">Store</Link>
         </li>
         {loggedInUserName.length > 0 ? (
           <>
