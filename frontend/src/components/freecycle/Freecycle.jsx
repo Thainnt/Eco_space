@@ -1,5 +1,4 @@
 import {React, Fragment, useEffect, useState} from "react";
-import useFetch from "../useFetch";
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import Item from "./Item";
 import axios from "axios";
@@ -17,7 +16,6 @@ export default function Freecycle() {
       axios.get("http://localhost:8080/api/freecycle/products")
     ]).then(all => {
       console.log(all);
-      // setState(prev => ({...prev, category:all[0].data, itemList:all[1].data}))  // this is an array of all products you can do a map on it
       setState({categories:all[0].data.categories, items:all[1].data.products});
     })
   },[]);
