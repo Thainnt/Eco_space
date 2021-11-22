@@ -31,7 +31,7 @@ router.post("/login", (req, res) => {
         .send({ status: "Error", message: "Can not find email" });
     } else {
       // console.log(response.rows[0]);
-      // req.session.user_id = response.rows[0].id;
+      req.session.user_id = response.rows[0].id;
       // req.session.user_name = response.rows[0].name;
       // have this redirect to appropriate page
       // res.cookie["username"] = response.rows[0].name;
@@ -49,36 +49,36 @@ router.post("/register", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const name = req.body.name;
-  const user = { 
+  const user = {
     name,
     email,
     password,
-    is_admin: false
-  }
+    is_admin: false,
+  };
 
   if (email === "" || password === "") {
     return res.status(400).send("Please fill out a valid email and password");
   }
-  userQueries.addUser(user)
-  .then(response => {
-    console.log(response)
-    userQueries.getUserByEmail(user.email)
-      .then((response) => {
-      const userFromDb = response.rows[0];
+  userQueries
+    .addUser(user)
+    .then((response) => {
+      console.log(response);
+      userQueries.getUserByEmail(user.email).then((response) => {
+        req.session.user_id = response.rows[0].id;
+        const userFromDb = response.rows[0];
         res.send({ ...userFromDb });
+      });
+    })
+    .catch((error) => {
+      console.log("failed to added user", error);
+      res.status(400).send("can not add user");
     });
-  })
-  .catch((error) => {
-    console.log("failed to added user", error)
-    res.status(400).send("can not add user")
-  })
 });
 
-// //logout route
-// router.post("/logout", (req, res) => {
-//   req.session.user_id = null;
-//   req.session.user_name = null;
-//   res.redirect("/");
-// });
+//logout route
+router.post("/logout", (req, res) => {
+  req.session.user_id = null;
+  res.json("Successfully logged out!");
+});
 
 module.exports = router;

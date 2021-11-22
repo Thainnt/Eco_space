@@ -7,6 +7,8 @@ const freePQueries = require("../db/free-products.queries");
 //api/freecycle/
 
 router.get("/products", (req, res) => {
+  const user_id = req.session.user_id;
+  console.log({ user_id });
   freePQueries
     .getAllFreeProducts()
     .then((response) => {

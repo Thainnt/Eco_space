@@ -8,17 +8,16 @@ const productQueries = require("../db/products.queries");
 router.get("/products", (req, res) => {
   storePQueries.getAllStoreProduct().then((response) => {
     const products = response.rows;
-    console.log(products);
     res.send({ products: products });
   });
 });
 
 //products/:id (GET)
-router.get("products/:id", (req, res) => {
-  console.log(req);
+router.get("/products/:id", (req, res) => {
+  console.log("reqqqqqqqqq", req.params);
   const prod_id = req.params.id;
   storePQueries.getSingleStoreProduct(prod_id).then((response) => {
-    console.log(response);
+    // console.log(response);
     if (response.rows.length === 0) {
       return res.status(404).send({
         status: "error",

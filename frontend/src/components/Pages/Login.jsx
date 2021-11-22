@@ -16,15 +16,14 @@ function LogIn(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:8080/api/users/login', {
+    axios.post('/api/users/login', {
       email: email,
       password: password
     }).then(res => {
-      // console.log("hello", res)
       const user = res.data
-      // localStorage.setItem('user', JSON.stringify(user) );
+      localStorage.setItem('username', user.name);
       console.log(user);
-      Cookies.set("username", user.name) //for logout Cookies.set("username", "")
+
       navigate('/Dashboard')
 
     }).catch((error) => {

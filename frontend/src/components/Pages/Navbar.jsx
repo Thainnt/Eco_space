@@ -2,18 +2,24 @@ import { Routes, Route, Link } from "react-router-dom";
 import Cookies from 'js-cookie'
 import {useNavigate} from 'react-router-dom';
 import styles from "../../styles.css"
+import axios from "axios";
 
 
 const Nav = (props) => {
   const navigate = useNavigate()
   const { loggedInUserName } = props;
+
   const handleClick = () => {
-    Cookies.set("username", "")
-    navigate("/")
+    localStorage.removeItem("username");
+    axios.post("/api/users/logout")
+      .then(response => {
+        navigate("/")
+      })
   }
   return (
     <nav class='navbar'>
       <h2>Eco Space</h2>
+      
       <ul>
         <li>
           <Link to="/About">About Us</Link>
@@ -39,6 +45,10 @@ const Nav = (props) => {
             </li>
           </>
         )}
+      <Routes>
+        <Route exact path="/store" element={<li> CART </li>} />
+      </Routes>
+        
       </ul>
     </nav>
   )
