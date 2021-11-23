@@ -2,6 +2,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
 import styles from "../../styles.css"
 import axios from "axios";
+import { IoIosPerson } from 'react-icons/io'
+import { StyledIcon } from "../styles/Icon";
 
 
 const Nav = (props) => {
@@ -35,14 +37,9 @@ const Nav = (props) => {
             <button onClick={handleClick}>Log Out </button> 
           </>
         ):(
-          <>
             <li>
-              <Link to="/Login">Log In</Link>
+              <Link to="/Login"><StyledIcon size={25} /></Link>
             </li>
-            <li>
-              <Link to="/Register">Register</Link>
-            </li>
-          </>
         )}
       <Routes>
         <Route exact path="/store" element={<li> CART </li>} />

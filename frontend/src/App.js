@@ -12,7 +12,6 @@ import GlobalStyles from "./components/styles/Global";
 
 import ItemDetails from "./components/freecycle/ItemDetails";
 
-
 function App() {
   const [loggedInUserName, setLoggedInUserName] = useState("");
   let location = useLocation();
