@@ -24,7 +24,7 @@ function App() {
       <GlobalStyles />
       <Nav loggedInUserName={loggedInUserName} />
       <Routes>
-        <Route exact path="/" element={<div>Home</div>} />
+        <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/store" element={<Store />} />
         <Route exact path="/products/:id" element={<ProductsDetails />} />
         <Route exact path="/freecycle" element={<Freecycle />} />
