@@ -1,0 +1,10 @@
+.item-image-container {
+  width: 20vw;
+  height: 20vh;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

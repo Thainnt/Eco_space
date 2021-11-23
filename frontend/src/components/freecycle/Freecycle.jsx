@@ -3,6 +3,8 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 import ItemList from "./ItemList";
 import axios from "axios";
 
+import "./Freecycle.css";
+
 export default function Freecycle() {
   
   const [state, setState] = useState({
