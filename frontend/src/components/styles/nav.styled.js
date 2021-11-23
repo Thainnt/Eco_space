@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: 60px;
+  // position: fixed;
+  // top: 0;
+  // margin-bottom: 30em;
 `;
 
 export const Wrapper = styled.div`
