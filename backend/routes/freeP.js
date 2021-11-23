@@ -36,8 +36,8 @@ router.get("/products/:id", (req, res) => {
   });
 });
 
-router.get("/category", (req, res) => {
-  const category_id = req.body.id;
+router.get("/categories/:id", (req, res) => {
+  const category_id = req.params.id;
   freePQueries
     .getFreeProductsByCategory(category_id)
     .then((response) => {
