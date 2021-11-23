@@ -7,6 +7,7 @@ import Register from "./components/Pages/Register";
 import LogIn from "./components/Pages/Login";
 import Dashboard from "./components/Pages/Dashboard";
 import ProductsDetails from "./components/store/ProductDetails";
+import About from "./components/Pages/About";
 
 function App() {
   const [loggedInUserName, setLoggedInUserName] = useState("");
@@ -20,6 +21,7 @@ function App() {
       <Nav loggedInUserName={loggedInUserName} />
       <Routes>
         <Route exact path="/" element={<div>Home</div>} />
+        <Route exact path="/About" element={<About />} />
         <Route exact path="/store" element={<Store />} />
         <Route exact path="/products/:id" element={<ProductsDetails />} />
         <Route exact path="/freecycle" element={<Freecycle />} />

@@ -33,7 +33,7 @@ export default function Register(props) {
     <div className="container">
       <h1 className="header">Register</h1>
       <form  className="form" onSubmit={handleSubmit}>
-
+        
         <label className="form-field">
         Name
         <input 
