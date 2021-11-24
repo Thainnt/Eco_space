@@ -28,6 +28,9 @@ const Nav = (props) => {
           <Logo>Eco Space</Logo>
         </Left>
         <Right>
+          <Link to="/">
+            <MenuItem>HOME</MenuItem>
+          </Link>
           <Link to="/About">
             <MenuItem>ABOUT US</MenuItem>
           </Link>
