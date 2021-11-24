@@ -7,6 +7,9 @@ export default function NewItem() {
     
     axios.post(""), {
       name: name,
+      quantity: quantity,
+      description: description,
+      image_url: image_url,
       
     }
   }
