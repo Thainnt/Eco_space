@@ -7,12 +7,15 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Badge } from "@mui/material";
 import { Button } from "@mui/material";
 import { Container, Wrapper, Logo, Left, Right, MenuItem } from "../styles/nav.styled";
+import { userContext } from "../../Hooks/ContextProvider";
+import { useContext } from "react";
 
 
 
-const Nav = (props) => {
+const Nav = () => {
+  const { userName } = useContext(userContext)
   const navigate = useNavigate()
-  const { loggedInUserName } = props;
+
 
   const handleClick = () => {
     localStorage.removeItem("username");
@@ -41,9 +44,9 @@ const Nav = (props) => {
             </Badge>
           </MenuItem>
         </Link>
-        {loggedInUserName.length > 0 ? (
+        {userName.length > 0 ? (
           <>
-            <MenuItem>{loggedInUserName}</MenuItem>
+            <MenuItem>{userName}</MenuItem>
             <MenuItem>
               <Button color="primary" onClick={handleClick}>LOG OUT</Button>
             </MenuItem>
