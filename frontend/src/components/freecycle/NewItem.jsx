@@ -6,11 +6,12 @@ export default function NewItem() {
     event.preventDefault();
     
     axios.post(""), {
+      category_id: 6, //to change
       name: name,
       quantity: quantity,
       description: description,
       image_url: image_url,
-      
+      seller_id: 5 // to change
     }
   }
 

@@ -14,7 +14,6 @@ import GlobalStyles from "./components/styles/Global";
 
 import ItemDetails from "./components/freecycle/ItemDetails";
 import NewItem from "./components/freecycle/NewItem";
-import Messaging from "./components/freecycle/Messaging";
 
 function App() {
   const [loggedInUserName, setLoggedInUserName] = useState("");
@@ -37,7 +36,6 @@ function App() {
         <Route exact path="freecycle" element={<Freecycle />}></Route>
         <Route path="Message" element={<Message />} />
         <Route exact path="/freecycle/items/:id" element={<ItemDetails />} />
-        <Route path="/messaging" component={Messaging}/>
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route
