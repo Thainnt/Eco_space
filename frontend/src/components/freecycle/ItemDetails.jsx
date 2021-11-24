@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import "./ItemDetails.css";
 import { ContainerDetails } from "../styles/ContainerDetails.styled";
 
 

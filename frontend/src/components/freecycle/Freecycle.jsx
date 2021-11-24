@@ -41,7 +41,7 @@ export default function Freecycle() {
   
   return (
     <main className="layout">
-      <Link to={"/freecycle/new"}>
+      <Link to={"/new"}>
         <button>Create New Item</button>
       </Link>
       <section className="sidebar">

@@ -74,4 +74,23 @@ router.get("/categories", (req, res) => {
   });
 });
 
+router.post("/products", (req,res) => {
+  const item = {
+    name: req.body.name,
+    quantity: req.body.quantity,
+    description: req.body.description,
+    image_url: req.body.image_url,
+    seller_id: req.body.seller_id,
+    category_id: req.body.category_id,
+    location: req.body.location
+  };
+  freePQueries.addNewItem(item)
+    .then(res => {
+      console.log('success:',res);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+})
+
 module.exports = router;
