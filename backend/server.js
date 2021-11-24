@@ -8,6 +8,7 @@ const cors = require('cors')
 const storePRouter = require("./routes/storeP");
 const usersRouter = require("./routes/users");
 const freePRouter = require("./routes/freeP");
+const contactRouter = require("./routes/contact");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -29,6 +30,7 @@ app.use(
 app.use("/api/users", usersRouter);
 app.use("/api/store", storePRouter);
 app.use("/api/freecycle", freePRouter);
+app.use("/api/contact", contactRouter );
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
