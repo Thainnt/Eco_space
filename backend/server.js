@@ -11,6 +11,7 @@ const cors = require("cors");
 const storePRouter = require("./routes/storeP");
 const usersRouter = require("./routes/users");
 const freePRouter = require("./routes/freeP");
+const contactRouter = require("./routes/contact");
 
 const app = express();
 const server = http.createServer(app);
@@ -41,6 +42,7 @@ app.use(
 app.use("/api/users", usersRouter);
 app.use("/api/store", storePRouter);
 app.use("/api/freecycle", freePRouter);
+app.use("/api/contact", contactRouter );
 
 // io.on('connection', (socket) => {
 //   console.log("a user connected", socket.id);

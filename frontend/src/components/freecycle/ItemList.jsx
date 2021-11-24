@@ -11,7 +11,9 @@ export default function ItemList(props) {
         <div className="item-preview" key={item.id}>
           <Link to={`/freecycle/items/${item.id}`}>
             <div className="item-card">
-              <img className="item-image" src={item.image_url} alt={item.name}/>
+              <div className="item-image-container">
+                <img className="item-image" src={item.image_url} alt={item.name}/>
+              </div>
               <span className="item_content">
                 <span className="item_name">{item.name}</span>
                 <p>{item.description}</p>

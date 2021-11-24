@@ -1,7 +1,12 @@
 import axios from "axios";
+import Talk from "talkjs";
 import { useEffect, useState} from "react";
 import { useParams } from "react-router";
+
 import { Link, useNavigate } from "react-router-dom";
+
+import "./ItemDetails.css";
+
 
 
 export default function ItemDetails() {
@@ -10,7 +15,6 @@ export default function ItemDetails() {
   const { id } = useParams();
 
   const [item, setItem] = useState({});
-
   useEffect(() => {
     axios.get("/api/freecycle/products/" + id)
       .then(response => {
@@ -19,6 +23,7 @@ export default function ItemDetails() {
         console.error(error);
       })
   }, [id]);
+
 
   return ( 
     <section className="item-details">
