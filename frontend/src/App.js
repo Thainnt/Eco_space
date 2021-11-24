@@ -1,7 +1,6 @@
 import Freecycle from "./components/freecycle/Freecycle";
-import { Routes, Route, Link, Outlet, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Pages/Navbar";
-import React, { useEffect, useState } from "react";
 import Store from "./components/store/store";
 import Register from "./components/Pages/Register";
 import LogIn from "./components/Pages/Login";
@@ -15,16 +14,10 @@ import GlobalStyles from "./components/styles/Global";
 import ItemDetails from "./components/freecycle/ItemDetails";
 
 function App() {
-  const [loggedInUserName, setLoggedInUserName] = useState("");
-  let location = useLocation();
-
-  useEffect(() => {
-    setLoggedInUserName(localStorage.getItem("username") || "");
-  }, [location]);
   return (
     <div className="App">
       <GlobalStyles />
-      <Nav loggedInUserName={loggedInUserName} />
+      <Nav />
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/About" element={<About />} />
@@ -33,13 +26,10 @@ function App() {
         <Route exact path="freecycle" element={<Freecycle />}></Route>
         <Route path="Message" element={<Message />} />
         <Route exact path="/freecycle/items/:id" element={<ItemDetails />} />
+        <Route path="/messaging" component={Messaging} />
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
-        <Route
-          exact
-          path="/Dashboard"
-          element={<Dashboard username={loggedInUserName} />}
-        />
+        <Route exact path="/Dashboard" element={<Dashboard />} />
       </Routes>
     </div>
   );
