@@ -6,6 +6,7 @@ import Store from "./components/store/store";
 import Register from "./components/Pages/Register";
 import LogIn from "./components/Pages/Login";
 import Dashboard from "./components/Pages/Dashboard";
+import Message from "./components/Text/Message";
 import ProductsDetails from "./components/store/ProductDetails";
 
 import GlobalStyles from "./components/styles/Global";
@@ -27,7 +28,8 @@ function App() {
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/store" element={<Store />} />
         <Route exact path="/products/:id" element={<ProductsDetails />} />
-        <Route exact path="/freecycle" element={<Freecycle />} />
+        <Route exact path="freecycle" element={<Freecycle />}></Route>
+        <Route path="Message" element={<Message />} />
         <Route exact path="/freecycle/items/:id" element={<ItemDetails />} />
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />

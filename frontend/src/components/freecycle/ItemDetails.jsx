@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useEffect, useState} from "react";
 import { useParams } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function ItemDetails() {
+  const navigate = useNavigate()
 
   const { id } = useParams();
 
@@ -16,7 +18,7 @@ export default function ItemDetails() {
       }).catch(error => {
         console.error(error);
       })
-  }, [id])
+  }, [id]);
 
   return ( 
     <section className="item-details">
@@ -25,7 +27,9 @@ export default function ItemDetails() {
       <p className="item-details-desc">{item.description}</p>
       <span className="item-details-loc">Location: {item.location}</span>
       <br/>
+      <Link to="/Message">
       <button className="item-details-contact">Contact owner</button>
+      </Link>
     </section>
    );
 }

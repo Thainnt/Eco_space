@@ -1,8 +1,9 @@
 require("dotenv").config();
-
+const chat = require('./chat');
+const socketio = require('socket.io');
 const express = require("express");
 const http = require("http");
-const { Server } = require("socket.io");
+// const { Server } = require("socket.io");
 const cookieParser = require("cookie-parser");
 const cookieSession = require("cookie-session");
 const morgan = require("morgan");
@@ -13,7 +14,13 @@ const freePRouter = require("./routes/freeP");
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = socketio(server,{
+  cors: {
+    origin: '*',
+    methods: ['GET', 'POST']
+  }
+});
+chat(io);
 
 const PORT = process.env.PORT || 8080;
 
@@ -35,9 +42,9 @@ app.use("/api/users", usersRouter);
 app.use("/api/store", storePRouter);
 app.use("/api/freecycle", freePRouter);
 
-io.on('connection', (socket) => {
-  console.log("a user connected", socket.id);
-})
+// io.on('connection', (socket) => {
+//   console.log("a user connected", socket.id);
+// })
 
 
 server.listen(PORT, () => {
