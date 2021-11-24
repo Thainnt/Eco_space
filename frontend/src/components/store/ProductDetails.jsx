@@ -2,9 +2,17 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { ContainerDetails } from "../styles/ContainerDetails.styled";
+import { userContext } from "../../Hooks/ContextProvider";
+import { useContext } from "react";
+import { MyArrow } from "../styles/Button.styled";
+
+
+
 
 
 const ProductsDetails = () => {
+  const { navigate } = useContext(userContext)
+
   const { id } = useParams();
   const [product, setProduct] = useState({})
 
@@ -13,10 +21,14 @@ const ProductsDetails = () => {
       .then(response => {
         setProduct(response.data.product);
       })
-  }, [id])
-  console.log(product.name)
+  }, [id]);
+
+  const handleClick = () => navigate(-1);
+
   return ( 
     <ContainerDetails>
+      <MyArrow onClick={handleClick} />
+
       {product && (
           <div className="box">
             <img src={product.image_url} alt={product.name} className="item_image" />

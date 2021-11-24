@@ -1,19 +1,18 @@
 import axios from "axios";
 import { useEffect, useState} from "react";
 import { useParams } from "react-router";
-
 import { Link, useNavigate } from "react-router-dom";
-
 import "./ItemDetails.css";
 import { ContainerDetails } from "../styles/ContainerDetails.styled";
+import { MyArrow } from "../styles/Button.styled";
+import { userContext } from "../../Hooks/ContextProvider";
+import { useContext } from "react";
 
 
 
 export default function ItemDetails() {
-  const navigate = useNavigate()
-
+  const { navigate } = useContext(userContext)
   const { id } = useParams();
-
   const [item, setItem] = useState({});
   useEffect(() => {
     axios.get("/api/freecycle/products/" + id)
@@ -24,9 +23,12 @@ export default function ItemDetails() {
       })
   }, [id]);
 
+  const handleClick = () => navigate(-1);
 
   return ( 
     <ContainerDetails>
+      <MyArrow onClick={handleClick} />
+
       {item && (
         <div className="box">
           <img className="item_image" src={item.image_url} alt={item.name}/>
