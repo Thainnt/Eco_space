@@ -1,15 +1,15 @@
 
 // import styles from "../../styles.css"
-import {useNavigate, Link} from 'react-router-dom';
-import { useState } from "react"
+import { Link } from 'react-router-dom';
+import { useContext, useState } from "react"
 import axios from "axios";
-
+import { userContext } from '../../Hooks/ContextProvider';
 import "./login.css"
 
 
 
-function LogIn(props) {
-  const navigate = useNavigate()
+function LogIn() {
+  const { navigate } = useContext(userContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("")
 
