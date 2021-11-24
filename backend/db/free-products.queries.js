@@ -20,9 +20,15 @@ const getCategories = () => {
   return db.query(`SELECT * FROM categories;`);
 };
 
+const getSingleProduct = (id) => {
+  return db
+    .query(`SELECT * FROM products WHERE ID=$1;`,[`${id}`]);
+}
+
 module.exports = {
   getAllFreeProducts,
   getFreeProductsByCategory,
   getFreeProductsBylocation,
   getCategories,
+  getSingleProduct
 };

@@ -9,6 +9,11 @@ import Dashboard from "./components/Pages/Dashboard";
 import ProductsDetails from "./components/store/ProductDetails";
 import About from "./components/Pages/About";
 
+import GlobalStyles from "./components/styles/Global";
+
+import ItemDetails from "./components/freecycle/ItemDetails";
+import Messaging from "./components/freecycle/Messaging";
+
 function App() {
   const [loggedInUserName, setLoggedInUserName] = useState("");
   let location = useLocation();
@@ -18,13 +23,16 @@ function App() {
   }, [location]);
   return (
     <div className="App">
+      <GlobalStyles />
       <Nav loggedInUserName={loggedInUserName} />
       <Routes>
-        <Route exact path="/" element={<div>Home</div>} />
+        <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/About" element={<About />} />
         <Route exact path="/store" element={<Store />} />
         <Route exact path="/products/:id" element={<ProductsDetails />} />
         <Route exact path="/freecycle" element={<Freecycle />} />
+        <Route exact path="/freecycle/items/:id" element={<ItemDetails />} />
+        <Route path="/messaging" component={Messaging}/>
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route

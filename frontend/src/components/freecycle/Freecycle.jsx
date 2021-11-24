@@ -1,47 +1,59 @@
-import {React, Fragment, useEffect, useState} from "react";
-import { Dropdown, DropdownButton } from 'react-bootstrap';
-import Item from "./Item";
+import {useEffect, useState} from "react";
+import ItemList from "./ItemList";
 import axios from "axios";
+import "./Freecycle.css";
 
 export default function Freecycle() {
   
-  const [state, setState] = useState({
-    categories: [],
-    items: []
-  });
+  const [categories, setCatagories] = useState([]);
   
   useEffect(() => {
-    Promise.all([
-      axios.get("/api/freecycle/categories"),
-      axios.get("/api/freecycle/products")
-    ]).then(all => {
-      setState({categories:all[0].data.categories, items:all[1].data.products});
+    axios.get("/api/freecycle/categories")
+    .then(res => {
+      setCatagories(res.data.categories);
     })
   },[]);
-  
-  console.log('product list: ', state.items);
-  const categoryList = state.categories.map((category) =>
-  <Dropdown.Item href="#/action-1">{category.name}</Dropdown.Item>
+
+  const categoryList = categories.map((category) =>
+  <option key={category.id} href="#" value={category.name}>{category.name}</option>
   );
 
-  const itemList = state.items.map((item) =>
-      <Item
-        key={item.id}
-        name={item.name}
-        image_url={item.image_url}
-        description={item.description}  
-      />
-  );
+  const [categoryName, setCategoryName] = useState("");
+  
+  let url = "";
+  if (!categoryName) {
+    url = "/api/freecycle/products";
+  } else {
+    const foundCat = categories.find(cat => cat.name === categoryName);
+    url = `/api/freecycle/categories/${foundCat.id}`;
+  }
+  
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    axios.get(url).then(res => {
+      setItems(res.data.products);
+    }).catch(err => {
+      console.error(err);
+    })
+  },[url]);
+
   
   return (
     <main className="layout">
       <section className="sidebar">
-        <DropdownButton id="dropdown-basic-button" title="Categories">
+        <form onSubmit={e => e.preventDefault()}>
+        <label>Categories</label><br/>
+        <select name="categories" id="category-select" value={categoryName} onChange={event => setCategoryName(event.target.value)}>
+          <option key="first" value="">All</option>
           {categoryList}
-        </DropdownButton>
+        </select>
+      </form>
       </section>
-      <section className="items">
-        <ul>{itemList}</ul>
+      <section className="item-show">
+        {items && <ItemList
+          items={items}
+          title="Category"
+          />}
       </section>
     </main>
   );
