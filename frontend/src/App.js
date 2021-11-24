@@ -12,10 +12,7 @@ import About from "./components/Pages/About";
 import GlobalStyles from "./components/styles/Global";
 
 import ItemDetails from "./components/freecycle/ItemDetails";
-<<<<<<< HEAD
 import NewItem from "./components/freecycle/NewItem";
-=======
->>>>>>> main
 
 function App() {
   return (
@@ -32,10 +29,6 @@ function App() {
         <Route exact path="freecycle" element={<Freecycle />}></Route>
         <Route path="Message" element={<Message />} />
         <Route exact path="/freecycle/items/:id" element={<ItemDetails />} />
-<<<<<<< HEAD
-=======
-        <Route path="/messaging" component={Messaging} />
->>>>>>> main
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route exact path="/Dashboard" element={<Dashboard />} />
