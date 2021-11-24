@@ -26,7 +26,6 @@ function App() {
         <Route exact path="freecycle" element={<Freecycle />}></Route>
         <Route path="Message" element={<Message />} />
         <Route exact path="/freecycle/items/:id" element={<ItemDetails />} />
-        <Route path="/messaging" component={Messaging} />
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route exact path="/Dashboard" element={<Dashboard />} />
