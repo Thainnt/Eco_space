@@ -12,7 +12,6 @@ import About from "./components/Pages/About";
 import GlobalStyles from "./components/styles/Global";
 
 import ItemDetails from "./components/freecycle/ItemDetails";
-import Messaging from "./components/freecycle/Messaging";
 
 function App() {
   return (

@@ -1,5 +1,4 @@
 import axios from "axios";
-import Talk from "talkjs";
 import { useEffect, useState} from "react";
 import { useParams } from "react-router";
 
