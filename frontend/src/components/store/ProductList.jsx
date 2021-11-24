@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom"
 import { Container } from "../styles/Container.styled";
+import { MyArrow } from "../styles/Button.styled";
+import { userContext } from "../../Hooks/ContextProvider";
+import { useContext } from "react";
 
 const ProductList = (props) => {
+  const { navigate } = useContext(userContext)
   const { products, title } = props
+
+  const handleClick = () => navigate(-1);
+  
   return ( 
     <>
+      <MyArrow onClick={handleClick} />
       <h2>{title}</h2>
     <Container>
       {products.map((product) => (
