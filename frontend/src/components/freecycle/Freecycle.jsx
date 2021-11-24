@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import { Link } from "react-router-dom";
 import ItemList from "./ItemList";
 import axios from "axios";
 import "./Freecycle.css";
@@ -40,6 +41,9 @@ export default function Freecycle() {
   
   return (
     <main className="layout">
+      <Link to={"/freecycle/new"}>
+        <button>Create New Item</button>
+      </Link>
       <section className="sidebar">
         <form onSubmit={e => e.preventDefault()}>
         <label>Categories</label><br/>
