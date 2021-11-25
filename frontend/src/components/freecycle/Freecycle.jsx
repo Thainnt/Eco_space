@@ -9,8 +9,8 @@ import "./Freecycle.css";
 
 export default function Freecycle() {
 
-  const  { categories, items } = useContext(dataContext);
-  const freeItems = items.filter(item => item.is_paid === false);
+  const  { categories, allItems } = useContext(dataContext);
+  const freeItems = allItems.filter(item => item.is_paid === false);
   const [categoryName, setCategoryName] = useState("All");
   const [itemsByCategory, setItemsByCategory] = useState(freeItems);
   
