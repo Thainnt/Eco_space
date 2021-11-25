@@ -1,5 +1,4 @@
 import { Routes, Route, Link } from "react-router-dom";
-import styles from "../../styles.css"
 import axios from "axios";
 import { StyledIcon } from "../styles/Icon";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
