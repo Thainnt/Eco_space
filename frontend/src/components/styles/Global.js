@@ -4,8 +4,8 @@ const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-  body {
-    
+  a {
+    text-decoration: none;
   }
 `;
 

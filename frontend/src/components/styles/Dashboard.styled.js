@@ -30,4 +30,8 @@ export const Container = styled.div`
     align-self: center;
     margin-top: 4em;
   }
+  a {
+  padding: 0.2rem 0.3rem;
+
+  }
 `;
