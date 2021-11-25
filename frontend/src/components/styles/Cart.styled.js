@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 export const Cartt = styled.aside`
-  width: 30%;
+  width: 50%;
   padding: 20px;
 `;

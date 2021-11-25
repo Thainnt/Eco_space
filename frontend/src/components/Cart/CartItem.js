@@ -14,7 +14,7 @@ const CartItem = () => {
             <h3>{item.name}</h3>
             <div className="information">
               <p>Price: ${item.amount}</p>
-              {/* <p>Total: ${item.amount * }</p> */}
+              <p>Total: ${item.amount * item.quantity}</p>
             </div>
             <div className="buttons">
               <Button
