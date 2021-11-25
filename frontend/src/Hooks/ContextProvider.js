@@ -14,7 +14,7 @@ export default function ContextProvider(props) {
   const [cartOpen, setCartOpen] = useState(false);
   const [user, setUser] = useState({});
   const [categories, setCategories] = useState([]);
-  const [freeitems, setFreeItems] = useState([]);
+  const [allItems, setAllItems] = useState([]);
 
   const userData = localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user"))
@@ -26,7 +26,7 @@ export default function ContextProvider(props) {
     ])
       .then((all) => {
         setCategories(all[0].data.categories);
-        setFreeItems(all[1].data.products);
+        setAllItems(all[1].data.products);
       })
       .catch((err) => {
         console.error(err);
@@ -89,7 +89,7 @@ export default function ContextProvider(props) {
     cartOpen,
     setCartOpen,
     categories,
-    freeitems,
+    allItems,
     user
   };
 
