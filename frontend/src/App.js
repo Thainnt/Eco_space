@@ -34,6 +34,7 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route exact path="/Dashboard" element={<Dashboard />} />
         <Route path="/cart" element={<Cart />} />
+        
 
       </Routes>
     </div>
