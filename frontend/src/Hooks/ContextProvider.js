@@ -6,40 +6,38 @@ import { useNavigate, useLocation } from "react-router-dom";
 export const dataContext = createContext();
 
 export default function ContextProvider(props) {
-
-  
   const [userName, setuserName] = useState("");
   const [items, setItem] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
   const [itemCount, setItemCount] = useState(0);
-  const [cartOpen, setCartOpen] = useState(false); 
+  const [cartOpen, setCartOpen] = useState(false);
   const [user, setUser] = useState({});
   const [categories, setCategories] = useState([]);
   const [freeitems, setFreeItems] = useState([]);
 
-  
-  const userData = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {};
+  const userData = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : {};
   useEffect(() => {
-    
     Promise.all([
       axios.get("/api/freecycle/categories"),
-      axios.get("/api/freecycle/items")
-    ]).then((all) => {
-      setCategories(all[0].data.categories);
-      setItems(all[1].data.products)
-    }).catch((err) => {
-      console.error(err);
-    });
-    
+      axios.get("/api/freecycle/items"),
+    ])
+      .then((all) => {
+        setCategories(all[0].data.categories);
+        setFreeItems(all[1].data.products);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
     setUser(userData || {});
-  },[]);
-  
+  }, []);
+
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
-  
-  
 
   const addItemToCart = (item) => {
     setItem((prevItems) => {
@@ -91,14 +89,10 @@ export default function ContextProvider(props) {
     cartOpen,
     setCartOpen,
     categories,
-    items
+    freeitems,
   };
 
-  
-
   return (
-    <dataContext.Provider value={data}>
-      {props.children}
-    </dataContext.Provider>
+    <dataContext.Provider value={data}>{props.children}</dataContext.Provider>
   );
-};
+}

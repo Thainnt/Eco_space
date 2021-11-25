@@ -12,7 +12,7 @@ import { MyArrow } from "../styles/Button.styled";
 
 const ProductsDetails = () => {
 
-  const { navigate, addItemToCart } = useContext(userContext)
+  const { navigate, addItemToCart } = useContext(dataContext)
 
 
   const { id } = useParams();
@@ -26,7 +26,7 @@ const ProductsDetails = () => {
   }, [id]);
 
   const handleClick = () => navigate(-1);
-  const handleAddToCart = (productItem) => console.log(productItem);
+  // const handleAddToCart = (productItem) => console.log(productItem);
 
   return ( 
     <ContainerDetails>

@@ -1,10 +1,10 @@
 import Button from "@mui/material/Button";
 import { Wrapper } from "../styles/Wrapper.styled";
-import { userContext } from "../../Hooks/ContextProvider";
+import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";
 
 const CartItem = () => {
-  const { items, removeItem, addItemToCart } = useContext(userContext);
+  const { items, removeItem, addItemToCart } = useContext(dataContext);
 
   return (
     <>

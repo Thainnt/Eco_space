@@ -1,11 +1,11 @@
 import CartItem from "./CartItem";
 import { Cartt } from "../styles/Cart.styled";
-import { userContext } from "../../Hooks/ContextProvider";
+import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext, useState } from "react";
 import { Drawer } from "@mui/material";
 
 const Cart = () => {
-  const { items, cartOpen, setCartOpen } = useContext(userContext);
+  const { items, cartOpen, setCartOpen } = useContext(dataContext);
 
   return (
     <Cartt>
