@@ -1,5 +1,4 @@
 import { Routes, Route, Link } from "react-router-dom";
-import {useNavigate} from 'react-router-dom';
 import styles from "../../styles.css"
 import axios from "axios";
 import { StyledIcon } from "../styles/Icon";
@@ -13,12 +12,14 @@ import { useContext } from "react";
 
 
 const Nav = () => {
-  const { userName } = useContext(userContext)
-  const navigate = useNavigate()
+  const { userName, itemCount, navigate, setCartOpen } = useContext(userContext)
+
 
 
   const handleClick = () => {
     localStorage.removeItem("username");
+    localStorage.removeItem("items");
+
     axios.post("/api/users/logout")
       .then(response => {
         navigate("/")
@@ -37,9 +38,9 @@ const Nav = () => {
           <Link to="/About">
             <MenuItem>ABOUT US</MenuItem>
           </Link>
-          <Link to="/cart">
+          <Link to="/cart" onClick={() => setCartOpen(true)}>
           <MenuItem>
-            <Badge color="primary">
+            <Badge color="secondary" badgeContent={itemCount}>
               <ShoppingCartOutlinedIcon />
             </Badge>
           </MenuItem>

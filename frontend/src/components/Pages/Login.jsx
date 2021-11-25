@@ -40,7 +40,9 @@ function LogIn() {
             value={email}
             required
             placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) =>{
+              console.log(e.target.value)
+                setEmail(e.target.value)}}
           />
           <input
             type="password"
