@@ -41,6 +41,10 @@ export default function NewItem() {
     setImage_url("");
   }
 
+  if (categories.find(category => category.id === 0)) {
+    categories.shift();
+  }
+
   const [categoryName, setCategoryName] = useState("Others");
   
   const foundCategory = categories.find(cat => cat.name === categoryName);

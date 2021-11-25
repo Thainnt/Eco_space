@@ -7,7 +7,6 @@ export default function CategoryList(props) {
   
   return (
       <select name="categories" id="category-select" value={props.categoryName} onChange={event => props.setCategoryName(event.target.value)}>
-        <option key="first" value="">All</option>
         {categoryList}
       </select>
   );
