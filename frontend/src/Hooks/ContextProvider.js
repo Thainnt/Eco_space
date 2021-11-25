@@ -16,9 +16,9 @@ export default function ContextProvider(props) {
   const [categories, setCategories] = useState([]);
   const [allItems, setAllItems] = useState([]);
 
-  const userData = localStorage.getItem("user")
-    ? JSON.parse(localStorage.getItem("user"))
-    : {};
+  // const userData = localStorage.getItem("user")
+    // ? JSON.parse(localStorage.getItem("user"))
+    // : {};
   useEffect(() => {
     Promise.all([
       axios.get("/api/freecycle/categories"),
@@ -31,9 +31,11 @@ export default function ContextProvider(props) {
       .catch((err) => {
         console.error(err);
       });
-
-    setUser(userData || {});
   }, []);
+    
+  useEffect(() => {
+  setUser(localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {});
+  },[user])
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));

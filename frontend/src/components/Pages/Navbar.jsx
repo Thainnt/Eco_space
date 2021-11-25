@@ -16,6 +16,7 @@ const Nav = () => {
 
   const handleClick = () => {
     localStorage.removeItem("username");
+    localStorage.removeItem("user");
     localStorage.removeItem("items");
     axios.post("/api/users/logout")
       .then(response => {
