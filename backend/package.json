@@ -9,6 +9,7 @@
     "local": "nodemon -L"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "chalk": "^4.1.2",
     "cookie-parser": "~1.4.4",
     "cookie-session": "^1.4.0",
@@ -20,6 +21,7 @@
     "pg": "^8.7.1",
     "pg-native": "^3.0.0",
     "socket.io": "^4.4.0",
+    "stripe": "^8.191.0",
     "uuidv4": "^6.2.12"
   },
   "devDependencies": {
