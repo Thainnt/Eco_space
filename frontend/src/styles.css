@@ -24,6 +24,7 @@ ul {
 }
 ul li {
   padding-right: 1em;
+  list-style: none;
 }
 
 a {

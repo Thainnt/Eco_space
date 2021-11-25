@@ -90,6 +90,7 @@ export default function ContextProvider(props) {
     setCartOpen,
     categories,
     freeitems,
+    user
   };
 
   return (
