@@ -11,7 +11,9 @@ import { MyArrow } from "../styles/Button.styled";
 
 
 const ProductsDetails = () => {
-  const { navigate } = useContext(dataContext)
+
+  const { navigate, addItemToCart } = useContext(userContext)
+
 
   const { id } = useParams();
   const [product, setProduct] = useState({})
@@ -24,6 +26,7 @@ const ProductsDetails = () => {
   }, [id]);
 
   const handleClick = () => navigate(-1);
+  const handleAddToCart = (productItem) => console.log(productItem);
 
   return ( 
     <ContainerDetails>
@@ -36,7 +39,7 @@ const ProductsDetails = () => {
               <h2>{product.name}</h2>
               <p>$ {product.amount} CAD</p>
               <p>Quantity</p>
-              <button>ADD TO CART</button>
+              <button onClick={() => addItemToCart(product)}>ADD TO CART</button>
               <p>{product.description}</p>
               <p>Set yourself up to reduce plastic with our Eco Space products</p>
             </span>

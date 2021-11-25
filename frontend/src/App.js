@@ -8,11 +8,9 @@ import Dashboard from "./components/Pages/Dashboard";
 import Message from "./components/Text/Message";
 import ProductsDetails from "./components/store/ProductDetails";
 import About from "./components/Pages/About";
-import Cart from "./components/Pages/cart";
-
 import GlobalStyles from "./components/styles/Global";
-
 import ItemDetails from "./components/freecycle/ItemDetails";
+import Cart from "./components/Cart/Cart";
 import ItemList from "./components/freecycle/ItemList";
 import NewItem from "./components/freecycle/NewItem";
 
@@ -35,7 +33,8 @@ function App() {
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route exact path="/Dashboard" element={<Dashboard />} />
-        <Route exact path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
+
       </Routes>
     </div>
   );

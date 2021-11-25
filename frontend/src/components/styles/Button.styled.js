@@ -19,5 +19,4 @@ export const MyArrow = styled(ArrowBackIcon)({
   cursor: "pointer",
   fontSize: "20px",
   width: "30px",
-  fontSize: "large",
 });

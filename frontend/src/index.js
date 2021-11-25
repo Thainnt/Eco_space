@@ -3,14 +3,19 @@ import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import App from "./App";
 import ContextProvider from "./Hooks/ContextProvider";
+import { QueryClient, QueryClientProvider } from "react-query";
 import "bootstrap/dist/css/bootstrap.css";
+const client = new QueryClient();
+
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ContextProvider>
-        <App />
-      </ContextProvider>
+      <QueryClientProvider client={client}>
+        <ContextProvider>
+          <App />
+        </ContextProvider>
+      </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
