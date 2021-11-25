@@ -17,7 +17,7 @@ export default function ItemList(props) {
   return (
     <>
      <MyArrow onClick={handleClick} />
-    <h2>Category</h2>
+    <h2>{title}</h2>
     <Container>
       {itemsByCategory.map((item)  => (
         <div className="product-preview" key={item.id}>

@@ -44,7 +44,9 @@ const Nav = () => {
         </Link>
         {userName.length > 0 ? (
           <>
-            <MenuItem>{userName}</MenuItem>
+            <Link to="/listed-items">
+              <MenuItem>{userName}</MenuItem>
+            </Link>
             <MenuItem>
               <Button color="primary" onClick={handleClick}>LOG OUT</Button>
             </MenuItem>

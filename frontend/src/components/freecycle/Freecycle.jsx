@@ -47,7 +47,7 @@ export default function Freecycle() {
       <section className="item-show">
         {itemsByCategory && <ItemList
           itemsByCategory={itemsByCategory}
-          title="Category"
+          title={categoryName}
           />}
       </section>
     </main>

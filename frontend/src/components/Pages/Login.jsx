@@ -21,6 +21,7 @@ function LogIn() {
       password: password
     }).then(res => {
       const user = res.data
+      localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('username', user.name);
 
       navigate('/Dashboard')
