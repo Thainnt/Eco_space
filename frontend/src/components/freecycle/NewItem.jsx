@@ -7,8 +7,6 @@ import CategoryList from "./CategoryList";
 export default function NewItem() {
   const { user, categories } = useContext(dataContext);
 
-  console.log('cats; ', categories);
-
   let category_id = 6;
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);

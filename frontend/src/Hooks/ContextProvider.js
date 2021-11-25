@@ -38,14 +38,3 @@ export default function ContextProvider(props) {
     </dataContext.Provider>
   );
 };
-      // axios.get("/api/freecycle/categories")
-      //   .then((res) => {
-      //     setCategories(res.data.categories);
-      //   })
-  
-      // axios.get("/api/freecycle/items")
-      // .then((res) => {
-      //   setItems(res.data.products);
-      // })
-  
-      // console.log('is:+.', '==',items, '& ', categories, '=');
