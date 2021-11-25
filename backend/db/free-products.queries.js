@@ -1,7 +1,7 @@
 const db = require("./db");
 
-const getAllFreeProducts = () => {
-  return db.query(`SELECT * FROM products WHERE is_paid=false;`);
+const getAllProducts = () => {
+  return db.query(`SELECT * FROM products;`);
 };
 
 const getFreeProductsByCategory = (category_id) => {
@@ -39,7 +39,7 @@ const addNewItem = (item) => {
 };
 
 module.exports = {
-  getAllFreeProducts,
+  getAllProducts,
   getFreeProductsByCategory,
   getFreeProductsBylocation,
   getCategories,

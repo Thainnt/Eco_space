@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container } from '../styles/messages.styled';
-import { userContext } from '../../Hooks/ContextProvider'
+import { dataContext } from '../../Hooks/ContextProvider'
 
 function Messages({ socket }) {
-  const { userName } = useContext(userContext);
+  const { user } = useContext(dataContext);
   const [messages, setMessages] = useState({});
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function Messages({ socket }) {
             className="message-container"
             title={`Sent at ${new Date(message.time).toLocaleTimeString()}`}
           >
-            <span className="user">{userName}:</span>
+            <span className="user">{user.name}:</span>
             <span className="message">{message.value}</span>
             <span className="date">{new Date(message.time).toLocaleTimeString()}</span>
           </div>

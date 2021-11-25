@@ -1,42 +1,52 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { dataContext } from "../../Hooks/ContextProvider";
 import { Link } from "react-router-dom";
+import CategoryList from "./CategoryList";
 
 export default function NewItem() {
+  const { user, categories } = useContext(dataContext);
 
+  console.log('cats; ', categories);
+
+  let category_id = 6;
   const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState("1");
+  const [quantity, setQuantity] = useState(1);
   const [description, setDescription] = useState("");
   const [image_url, setImage_url] = useState("");
-
-  // const [error, setError] = useState("");
+  const location = "Halifax"; //to change
+  const seller_id = user.id;
 
   function handleSubmit(event) {
     event.preventDefault();
     axios.post('/api/freecycle/products', {
-      category_id: 6, //to change
+      category_id: category_id,
       name: name,
       quantity: quantity,
       description: description,
       image_url: image_url,
-      location: "Halifax", //to change
-      seller_id: 5 // to change
+      location: location,
+      seller_id: seller_id
     }).then(res => {
       console.log("success");
     }).catch(err => {
       console.log("can not create: ",err);
     })
+    reset();
   }
+
+  function reset() {
+    setCategoryName("Others");
+    setName("");
+    setQuantity(1);
+    setDescription("");
+    setImage_url("");
+  }
+
+  const [categoryName, setCategoryName] = useState("Others");
   
-  // function validate(event) {
-  //   console.log("name",name,"desc", description);
-  //   if (name === "") {
-  //     setError("Required fields can not be blank.");
-  //     return;
-  //   } else {
-  //     setError("");
-  //   }
-  // }
+  const foundCategory = categories.find(cat => cat.name === categoryName);
+  category_id = foundCategory.id;
 
   return (
     <div className="new-item">
@@ -46,6 +56,11 @@ export default function NewItem() {
 
         <label className="new-item__category">
           Select category
+          <CategoryList
+            categoryName = {categoryName}
+            setCategoryName = {setCategoryName}
+            categories = {categories}
+          />
         </label>
 
         <label className="new-item__name">
@@ -89,7 +104,7 @@ export default function NewItem() {
         </label>
 
         <button type="submit" className="new-item__submit">Create</button>
-
+        <button type="reset" className="new-item__reset" onClick={reset}>Reset</button>
         <Link to="/freecycle">
           <button className="new-item__cancel">Back</button>
         </Link>

@@ -6,11 +6,11 @@ const freePQueries = require("../db/free-products.queries");
 
 //api/freecycle/
 
-router.get("/products", (req, res) => {
+router.get("/items", (req, res) => {
   const user_id = req.session.user_id;
   console.log({ user_id });
   freePQueries
-    .getAllFreeProducts()
+    .getAllProducts()
     .then((response) => {
       const products = response.rows;
       res.send({ products: products });

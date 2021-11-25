@@ -2,12 +2,12 @@ import{ Link } from "react-router-dom";
 
 export default function ItemList(props) {
 
-  const { items, title } = props;
+  const { itemsByCategory } = props;
   
   return (
     <div className="item-list">
       <h2>Category</h2>
-      {items.map((item) => (
+      {itemsByCategory.map((item) => (
         <div className="item-preview" key={item.id}>
           <Link to={`/freecycle/items/${item.id}`}>
             <div className="item-card">
