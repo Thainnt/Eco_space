@@ -38,7 +38,7 @@ const Nav = () => {
           <Link to="/cart" onClick={() => setCartOpen(true)}>
           <MenuItem>
             <Badge color="secondary" badgeContent={itemCount}>
-              <ShoppingCartOutlinedIcon />
+              <ShoppingCartOutlinedIcon onClick={() => setCartOpen(true)}/>
             </Badge>
           </MenuItem>
         </Link>
