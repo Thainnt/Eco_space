@@ -3,13 +3,13 @@
 import { Link } from 'react-router-dom';
 import { useContext, useState } from "react"
 import axios from "axios";
-import { userContext } from '../../Hooks/ContextProvider';
+import { dataContext } from '../../Hooks/ContextProvider';
 import "./login.css"
 
 
 
 function LogIn() {
-  const { navigate } = useContext(userContext);
+  const { navigate } = useContext(dataContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("")
 
@@ -21,8 +21,7 @@ function LogIn() {
       password: password
     }).then(res => {
       const user = res.data
-      localStorage.setItem('username', user.name);
-      console.log(user);
+      localStorage.setItem('user', JSON.stringify(user));
 
       navigate('/Dashboard')
 

@@ -6,20 +6,18 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Badge } from "@mui/material";
 import { Button } from "@mui/material";
 import { Container, Wrapper, Logo, Left, Right, MenuItem } from "../styles/nav.styled";
-import { userContext } from "../../Hooks/ContextProvider";
+import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";
 
-
-
 const Nav = () => {
-  const { userName, itemCount, navigate, setCartOpen } = useContext(userContext)
+
+  const { userName, itemCount, navigate, setCartOpen } = useContext(dataContext)
 
 
 
   const handleClick = () => {
     localStorage.removeItem("username");
     localStorage.removeItem("items");
-
     axios.post("/api/users/logout")
       .then(response => {
         navigate("/")

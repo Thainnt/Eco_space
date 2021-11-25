@@ -1,17 +1,17 @@
 import axios from "axios";
 import { useEffect, useState} from "react";
 import { useParams } from "react-router";
+
+
 import { Link, useNavigate } from "react-router-dom";
-import "./ItemDetails.css";
 import { ContainerDetails } from "../styles/ContainerDetails.styled";
 import { MyArrow } from "../styles/Button.styled";
-import { userContext } from "../../Hooks/ContextProvider";
+import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";
 
 
-
 export default function ItemDetails() {
-  const { navigate } = useContext(userContext)
+  const { navigate } = useContext(dataContext)
   const { id } = useParams();
   const [item, setItem] = useState({});
   useEffect(() => {

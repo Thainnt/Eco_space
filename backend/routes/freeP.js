@@ -6,11 +6,11 @@ const freePQueries = require("../db/free-products.queries");
 
 //api/freecycle/
 
-router.get("/products", (req, res) => {
+router.get("/items", (req, res) => {
   const user_id = req.session.user_id;
   console.log({ user_id });
   freePQueries
-    .getAllFreeProducts()
+    .getAllProducts()
     .then((response) => {
       const products = response.rows;
       res.send({ products: products });
@@ -73,5 +73,24 @@ router.get("/categories", (req, res) => {
     res.send({ categories: categories });
   });
 });
+
+router.post("/products", (req,res) => {
+  const item = {
+    name: req.body.name,
+    quantity: req.body.quantity,
+    description: req.body.description,
+    image_url: req.body.image_url,
+    seller_id: req.body.seller_id,
+    category_id: req.body.category_id,
+    location: req.body.location
+  };
+  freePQueries.addNewItem(item)
+    .then(res => {
+      console.log('success:',res);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+})
 
 module.exports = router;

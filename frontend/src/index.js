@@ -1,12 +1,12 @@
-import "bootstrap/dist/css/bootstrap.css";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import App from "./App";
 import ContextProvider from "./Hooks/ContextProvider";
 import { QueryClient, QueryClientProvider } from "react-query";
-
+import "bootstrap/dist/css/bootstrap.css";
 const client = new QueryClient();
+
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,57 +1,52 @@
-import {useEffect, useState} from "react";
+import { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+import { dataContext } from "../../Hooks/ContextProvider";
+
 import ItemList from "./ItemList";
-import axios from "axios";
+import CategoryList from "./CategoryList";
 import "./Freecycle.css";
 
 export default function Freecycle() {
+
+  const  { categories, items } = useContext(dataContext);
+  const freeItems = items.filter(item => item.is_paid === false);
+  const [categoryName, setCategoryName] = useState("All");
+  const [itemsByCategory, setItemsByCategory] = useState(freeItems);
   
-  const [categories, setCatagories] = useState([]);
-  
-  useEffect(() => {
-    axios.get("/api/freecycle/categories")
-    .then(res => {
-      setCatagories(res.data.categories);
+  if (!categories.find(category => category.id === 0)) {
+    categories.unshift({
+      id: 0,
+      name: 'All'
     })
-  },[]);
-
-  const categoryList = categories.map((category) =>
-  <option key={category.id} href="#" value={category.name}>{category.name}</option>
-  );
-
-  const [categoryName, setCategoryName] = useState("");
-  
-  let url = "";
-  if (!categoryName) {
-    url = "/api/freecycle/products";
-  } else {
-    const foundCat = categories.find(cat => cat.name === categoryName);
-    url = `/api/freecycle/categories/${foundCat.id}`;
   }
-  
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    axios.get(url).then(res => {
-      setItems(res.data.products);
-    }).catch(err => {
-      console.error(err);
-    })
-  },[url]);
 
+  const foundCategory = categories.find(category => category.name === categoryName);
+  useEffect(() => {
+    if (categoryName === "All") {
+      setItemsByCategory(freeItems);
+    } else {
+      setItemsByCategory(freeItems.filter(item => item.category_id === foundCategory.id));
+    }
+
+  },[categoryName]);
   
   return (
     <main className="layout">
+      <Link to={"new"}>
+        <button>Create New Item</button>
+      </Link>
       <section className="sidebar">
-        <form onSubmit={e => e.preventDefault()}>
         <label>Categories</label><br/>
-        <select name="categories" id="category-select" value={categoryName} onChange={event => setCategoryName(event.target.value)}>
-          <option key="first" value="">All</option>
-          {categoryList}
-        </select>
-      </form>
+        <CategoryList
+         categoryName = {categoryName}
+         setCategoryName = {setCategoryName}
+         categories = {categories}
+        />
       </section>
       <section className="item-show">
-        {items && <ItemList
-          items={items}
+        {itemsByCategory && <ItemList
+          itemsByCategory={itemsByCategory}
           title="Category"
           />}
       </section>

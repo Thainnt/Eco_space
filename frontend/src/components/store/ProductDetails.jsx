@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { ContainerDetails } from "../styles/ContainerDetails.styled";
-import { userContext } from "../../Hooks/ContextProvider";
+import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";
 import { MyArrow } from "../styles/Button.styled";
 
@@ -11,7 +11,9 @@ import { MyArrow } from "../styles/Button.styled";
 
 
 const ProductsDetails = () => {
+
   const { navigate, addItemToCart } = useContext(userContext)
+
 
   const { id } = useParams();
   const [product, setProduct] = useState({})
