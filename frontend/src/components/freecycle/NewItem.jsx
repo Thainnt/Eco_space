@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import CategoryList from "./CategoryList";
 
 export default function NewItem() {
-  const { user, categories } = useContext(dataContext);
+  const { user, categories, fetchAllItems } = useContext(dataContext);
 
   let category_id = 6;
   const [name, setName] = useState("");
@@ -28,6 +28,7 @@ export default function NewItem() {
         seller_id: seller_id
       }).then(res => {
         console.log("success");
+        fetchAllItems();
       }).catch(err => {
         console.log("can not create: ",err);
       });

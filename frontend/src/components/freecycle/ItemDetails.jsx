@@ -11,7 +11,7 @@ import { useContext } from "react";
 
 
 export default function ItemDetails() {
-  const { navigate, user } = useContext(dataContext)
+  const { navigate, user, fetchAllItems } = useContext(dataContext)
   const { id } = useParams();
   const [item, setItem] = useState({});
   useEffect(() => {
@@ -32,6 +32,7 @@ export default function ItemDetails() {
     axios.delete(`/api/freecycle/items/${itemId}`)
     .then(res => {
       console.log("deleted", res);
+      fetchAllItems();
     }).catch(err => {
       console.error(err);
     });
