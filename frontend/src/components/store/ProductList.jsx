@@ -3,9 +3,10 @@ import { Container } from "../styles/Container.styled";
 import { MyArrow } from "../styles/Button.styled";
 import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";
+import Admin from "../Admin/Admin";
 
 const ProductList = (props) => {
-  const { navigate } = useContext(dataContext)
+  const { navigate, user } = useContext(dataContext)
   const { products, title } = props
 
   const handleClick = () => navigate(-1);
@@ -14,6 +15,7 @@ const ProductList = (props) => {
     <>
       <MyArrow onClick={handleClick} />
       <h2>{title}</h2>
+      {user.is_admin ? <Admin /> : null}
     <Container>
       {products.map((product) => (
         <div className="product-preview" key={product.id}>

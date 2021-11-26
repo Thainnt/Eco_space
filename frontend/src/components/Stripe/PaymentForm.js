@@ -2,6 +2,8 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { useState } from "react";
 import { PayForm } from "../styles/PayForm.styled";
+import { dataContext } from "../../Hooks/ContextProvider";
+import { useContext } from "react";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -26,6 +28,7 @@ const PaymentForm = () => {
   const [success, setSuccess] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
+  const { navigate } = useContext(dataContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,9 +69,10 @@ const PaymentForm = () => {
           <button>Pay</button>
         </form>
       ) : (
-        <div>
-          <h2>Purchase is Successful</h2>
-        </div>
+        // <div>
+        //   <h2>Purchase is Successful</h2>
+        // </div>
+        navigate("/main")
       )}
     </PayForm>
   );
