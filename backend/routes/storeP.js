@@ -33,27 +33,22 @@ router.post("/new", (req, res) => {
   const quantity = req.body.quantity;
   const description = req.body.description;
   const image_url = req.body.image_url;
-  // const seller_id = req.
-  // const category_id = req.
-  const is_sold = false;
-  let is_paid = false;
+  const seller_id = req.body.seller_id
+  const category_id = req.body.category_id
+  const is_sold = req.body.is_sold
+  let is_paid = req.body.is_paid
   let amount = req.body.amount;
   let product = {
     Pname,
     quantity,
     description,
     image_url,
-    // seller_id,
-    // category_id,
+    seller_id,
+    category_id,
     is_sold,
     is_paid,
     amount,
   };
-
-  if (req.body.is_paid) {
-    is_paid = req.body.is_paid;
-    amount = req.body.amount;
-  }
 
   productQueries
     .addProduct(product)

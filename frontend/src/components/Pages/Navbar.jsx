@@ -36,6 +36,9 @@ const Nav = () => {
           <Link to="/About">
             <MenuItem>ABOUT US</MenuItem>
           </Link>
+            <Link to="/listed-items">
+              <MenuItem>{userName}</MenuItem>
+            </Link>
           <Link to="/main" onClick={() => setCartOpen(true)}>
           <MenuItem>
             <Badge color="secondary" badgeContent={itemCount}>
@@ -44,14 +47,9 @@ const Nav = () => {
           </MenuItem>
         </Link>
         {userName.length > 0 ? (
-          <>
-            <Link to="/listed-items">
-              <MenuItem>{userName}</MenuItem>
-            </Link>
             <MenuItem>
               <Button color="primary" onClick={handleClick}>LOG OUT</Button>
             </MenuItem>
-          </>
         ):(
           <Link to="/Login">
             <MenuItem>
