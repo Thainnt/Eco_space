@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const Cartt = styled.aside`
-  width: 50%;
+export const Wrapper = styled.aside`
+  width: 500px;
   padding: 20px;
+  // text-align: center;
 `;
