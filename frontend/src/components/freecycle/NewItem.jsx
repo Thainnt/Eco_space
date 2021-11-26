@@ -17,21 +17,22 @@ export default function NewItem() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios.post('/api/freecycle/products', {
-      category_id: category_id,
-      name: name,
-      quantity: quantity,
-      description: description,
-      image_url: image_url,
-      location: location,
-      seller_id: seller_id
-    }).then(res => {
-      console.log("success");
-    }).catch(err => {
-      console.log("can not create: ",err);
-    })
+    axios.post('/api/freecycle/products',
+      {
+        category_id: category_id,
+        name: name,
+        quantity: quantity,
+        description: description,
+        image_url: image_url,
+        location: location,
+        seller_id: seller_id
+      }).then(res => {
+        console.log("success");
+      }).catch(err => {
+        console.log("can not create: ",err);
+      });
     reset();
-  }
+  };
 
   function reset() {
     setCategoryName("Others");

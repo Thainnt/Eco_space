@@ -31,15 +31,11 @@ export default function ContextProvider(props) {
       .catch((err) => {
         console.error(err);
       });
-    
   }, []);
 
   useEffect(() => {
     setUser(
-      localStorage.getItem("user")
-        ? JSON.parse(localStorage.getItem("user"))
-        : {}
-    );
+      localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {});
   }, []);
 
   useEffect(() => {

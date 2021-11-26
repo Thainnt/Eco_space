@@ -74,7 +74,7 @@ router.get("/categories", (req, res) => {
   });
 });
 
-router.post("/products", (req,res) => {
+router.post("/products", (req,response) => {
   const item = {
     name: req.body.name,
     quantity: req.body.quantity,
@@ -86,7 +86,8 @@ router.post("/products", (req,res) => {
   };
   freePQueries.addNewItem(item)
     .then(res => {
-      console.log('success:',res);
+      console.log('success add:',res);
+      response.send({status: 200, message: "added new item"});
     })
     .catch(err => {
       console.log(err);
@@ -94,12 +95,11 @@ router.post("/products", (req,res) => {
 });
 
 //delete item
-router.delete("/items/:id", (req,res) => {
-  console.log('re2', req);
-  const id = req.body.id;
+router.delete("/items/:id", (req,response) => {
+  const id = req.params.id;
  productQueries.deleteProduct(id)
   .then(res => {
-    console.log('success', res);
+    response.send({status: 200, message: "item deleted"});
   }).catch(err => {
     console.log(err)
   })
