@@ -36,6 +36,7 @@ const CartItem = () => {
               </Button>
             </div>
           </div>
+          <img src={item.image_url} alt={item.name} />
         </Wrapper>
       ))}
     </>

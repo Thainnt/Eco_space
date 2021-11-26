@@ -35,7 +35,7 @@ const Nav = () => {
           <Link to="/About">
             <MenuItem>ABOUT US</MenuItem>
           </Link>
-          <Link to="/cart" onClick={() => setCartOpen(true)}>
+          <Link to="/main" onClick={() => setCartOpen(true)}>
           <MenuItem>
             <Badge color="secondary" badgeContent={itemCount}>
               <ShoppingCartOutlinedIcon onClick={() => setCartOpen(true)}/>

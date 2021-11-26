@@ -14,6 +14,7 @@ import Cart from "./components/Cart/Cart";
 import ItemList from "./components/freecycle/ItemList";
 import NewItem from "./components/freecycle/NewItem";
 import UserDashboard from "./components/freecycle/UserDashboard";
+import Main from "./components/Cart/Main";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         <Route exact path="/store" element={<Store />} />
         <Route exact path="/products/:id" element={<ProductsDetails />} />
         <Route exact path="/freecycle" element={<Freecycle />} />
-        <Route path="/freecycle/new" element={<NewItem />} >
+        <Route path="/freecycle/new" element={<NewItem />}>
           <Route index element={<ItemList />} />
         </Route>
         <Route path="/freecycle/items/:id" element={<ItemDetails />} />
@@ -35,9 +36,7 @@ function App() {
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route exact path="/Dashboard" element={<Dashboard />} />
-        <Route path="/cart" element={<Cart />} />
-        
-
+        <Route path="/main" element={<Main />} />
       </Routes>
     </div>
   );
