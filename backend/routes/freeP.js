@@ -91,6 +91,18 @@ router.post("/products", (req,res) => {
     .catch(err => {
       console.log(err);
     })
-})
+});
+
+//delete item
+router.delete("/items/:id", (req,res) => {
+  console.log('re2', req);
+  const id = req.body.id;
+ productQueries.deleteProduct(id)
+  .then(res => {
+    console.log('success', res);
+  }).catch(err => {
+    console.log(err)
+  })
+});
 
 module.exports = router;

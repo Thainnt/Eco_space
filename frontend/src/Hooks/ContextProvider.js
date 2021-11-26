@@ -31,7 +31,7 @@ export default function ContextProvider(props) {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [user]);
     
   useEffect(() => {
   setUser(localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {});

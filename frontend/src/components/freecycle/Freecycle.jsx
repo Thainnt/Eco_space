@@ -48,6 +48,7 @@ export default function Freecycle() {
         {itemsByCategory && <ItemList
           itemsByCategory={itemsByCategory}
           title={categoryName}
+          is_userDashboard={false}
           />}
       </section>
     </main>
