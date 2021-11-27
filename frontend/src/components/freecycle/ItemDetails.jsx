@@ -59,7 +59,7 @@ export default function ItemDetails() {
                     }}>Delete
                   </button>
                 </Link>
-                <Link to="/freecycle/new">
+                <Link to={`/freecycle/edit/${id}`}>
                   <button className="user-dashboard__del">Edit</button>
                 </Link>
               </div> :

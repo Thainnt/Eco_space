@@ -38,11 +38,24 @@ const addNewItem = (item) => {
     });
 };
 
+const editItem = (item) => {
+  return db
+    .query(
+      `UPDATE products SET (name, quantity, description, image_url) = ($1, $2, $3, $4) WHERE id= $5 RETURNING *;`,[`${item.name}`, `${item.quantity}`, `${item.description}`, `${item.image_url}`, `${item.id}`]
+    ).then(res =>{
+      console.log(res);
+      // if(res.rows.length) {
+      //   return res.row[0];
+      // }
+    });
+};
+
 module.exports = {
   getAllProducts,
   getFreeProductsByCategory,
   getFreeProductsBylocation,
   getCategories,
   getSingleProduct,
-  addNewItem
+  addNewItem,
+  editItem
 };
