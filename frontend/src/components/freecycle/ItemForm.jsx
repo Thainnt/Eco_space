@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import CategoryList from "./CategoryList";
+import { Wrapper } from "../styles/Container.styled";
+import Button from "@mui/material/Button";
+import "./ItemForm.css";
 
 export default function ItemForm (props) {
 
@@ -21,10 +24,13 @@ export default function ItemForm (props) {
   } = props;
 
   return (
-      <form className="new-item__form" onSubmit={handleSubmit}>
+    <Wrapper>
+      <form className="item-form" onSubmit={handleSubmit}>
 
-        <label className="new-item__category">
-          Select category
+        <label className="item__category">
+          <div>
+            Select category
+          </div>
           <CategoryList
             categoryName = {categoryName}
             setCategoryName = {setCategoryName}
@@ -32,7 +38,7 @@ export default function ItemForm (props) {
           />
         </label>
 
-        <label className="new-item__name">
+        <label className="item__name">
           Name
           <input
             type="text" required
@@ -42,7 +48,7 @@ export default function ItemForm (props) {
           />
         </label>
 
-        <label className="new-item__quantity">
+        <label className="item__quantity">
           Quantity
           <input
             type="number"
@@ -50,20 +56,20 @@ export default function ItemForm (props) {
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
             placeholder="e.g. 5"
-          />
+            />
         </label>
 
-        <label className="new-item__desc">
+        <label className="item__desc">
           Description
           <input
             type="text" required
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Item details e.g. condition, material, etc."
-          />
+            />
         </label>
 
-        <label className="new-item__img">
+        <label className="item__img">
           Photo link
           <input
             type="text" required
@@ -71,13 +77,15 @@ export default function ItemForm (props) {
             onChange={(e) => setImage_url(e.target.value)}
           />
         </label>
-
-        <button type="submit" className="new-item__submit">{childName}</button>
-        <button type="reset" className="new-item__reset" onClick={reset}>Reset</button>
-        <Link to="/freecycle">
-          <button className="new-item__cancel">Back</button>
-        </Link>
+        <div className="button-container">
+          <Link to="/freecycle">
+            <Button className="item__cancel">Back</Button>
+          </Link>
+          <Button type="reset" className="item__reset" onClick={reset}>Reset</Button>
+          <Button type="submit" className="item__submit">{childName}</Button>
+        </div>
 
       </form>
+    </Wrapper>
   );
 }

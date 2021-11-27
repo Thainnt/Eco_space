@@ -6,6 +6,8 @@ import { dataContext } from "../../Hooks/ContextProvider";
 import ItemList from "./ItemList";
 import CategoryList from "./CategoryList";
 import "./Freecycle.css";
+import Button from "@mui/material/Button";
+
 
 export default function Freecycle() {
 
@@ -34,7 +36,7 @@ export default function Freecycle() {
   return (
     <main className="layout">
       <Link to={"new"}>
-        <button>Create New Item</button>
+        <Button className="create-new-item-button">Create New Item</Button>
       </Link>
       <section className="sidebar">
         <label>Categories</label><br/>

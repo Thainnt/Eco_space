@@ -47,8 +47,9 @@ export default function ItemDetails() {
           <img className="item_image" src={item.image_url} alt={item.name}/>
           <span className="content">
             <h2>{item.name}</h2>
-            <p>{item.location}</p>
             <p>{item.description}</p>
+            <p>Location: {item.location}</p>
+            <p>Quantity: {item.quantity}</p>
             {is_owner ? 
               <div>
                 <Link to="/listed-items">
