@@ -10,12 +10,15 @@ import ProductsDetails from "./components/store/ProductDetails";
 import About from "./components/Pages/About";
 import GlobalStyles from "./components/styles/Global";
 import ItemDetails from "./components/freecycle/ItemDetails";
-import Cart from "./components/Cart/Cart";
 import ItemList from "./components/freecycle/ItemList";
 import NewItem from "./components/freecycle/NewItem";
 import UserDashboard from "./components/freecycle/UserDashboard";
 import Main from "./components/Cart/Main";
+import Add from "./components/Admin/Add";
+import Edit from "./components/Admin/Edit";
+import Product from "./components/Admin/Product";
 import EditItem from "./components/freecycle/EditItem";
+
 
 function App() {
   return (
@@ -39,6 +42,9 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route exact path="/Dashboard" element={<Dashboard />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/Add" element={<Add />} />
+        <Route path="/Edit" element={<Edit />} />
+        <Route path="/product/:id" element={<Product />} />
       </Routes>
     </div>
   );

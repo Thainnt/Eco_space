@@ -38,9 +38,9 @@ INSERT INTO products (name, quantity, description, image_url, seller_id, categor
 
   ('Eco Coffee presser', 29, '100% organic Bamboo french press', 'https://cdn.shopify.com/s/files/1/0024/8787/7745/products/DSC06275-resized_2000x.jpg?v=1629150915', 1, NULL, NULL, false, true, 40),
 
-  ('Eco straws', 10, '100% organic Bamboo straws', 'https://cdn.shopify.com/s/files/1/0024/8787/7745/products/sustainable-tomorrow-drinking-straws-25-pcs-bamboo-straws-set-25-pcs-6266979418225_2000x.png?v=1618998407', 1, NULL, NULL, false, true, 20),
+  ('BAMBOO HAIR BRUSH', 10, 'Our hairbrush has large wooden bristles which help to naturally condition your hair, and evenly distribute your hair’s natural oils. The bristles are also gentle and durable. Since they are wide, they are less likely to break the hair when combing. Plus, they do not produce any static compared to synthetic brushes and combs!', 'https://cdn.shopify.com/s/files/1/1178/9804/products/brossefondbeige_1296x.png?v=1613074623', 1, NULL, NULL, false, true, 20),
 
-  ('Eco phone case', 50, ' A sustainable phone case', 'https://pelacase.ca/static/e805d28bc7ec79fa949ac8e96d56cf58/1a1d3/IP_XIR_BEE_HONEY_BACK.jpg',1, NULL, NULL, false, true, 10),
+  ('BAMBOO SOAP DISH', 50, 'Our soap dish is the perfect addition to any bathroom. Crafted from bamboo, it is light, antibacterial and it fits in any decor.', 'https://cdn.shopify.com/s/files/1/1178/9804/products/soapdish-modif_1296x.jpg?v=1610372148',1, NULL, NULL, false, true, 10),
 
-  ('Eco Airpods case', 30, 'A sustainable airpods case', 'https://pelacase.ca/static/0b40fb8ebd096db448263315db917dbb/1a1d3/AirPods_LAVENDER_BACK.jpg', 1, NULL, NULL, false, true, 10);
+  ('BAMBOO TRAVEL CASE', 30, 'Bring your shampoo and conditioner bars everywhere you go with our bamboo case! Super light and adorable, this eco-friendly accessory will protect your bars during traveling', 'https://cdn.shopify.com/s/files/1/1178/9804/products/28052019-DSC08891_1296x.jpg?v=1599743687', 1, NULL, NULL, false, true, 10);
 
