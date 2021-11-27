@@ -21,8 +21,8 @@ export default function Freecycle() {
     })
   }
 
-  const foundCategory = categories.find(category => category.name === categoryName);
   useEffect(() => {
+    const foundCategory = categories.find(category => category.name === categoryName);
     if (categoryName === "All") {
       setItemsByCategory(freeItems);
     } else {
@@ -48,6 +48,7 @@ export default function Freecycle() {
         {itemsByCategory && <ItemList
           itemsByCategory={itemsByCategory}
           title={categoryName}
+          is_userDashboard={false}
           />}
       </section>
     </main>
