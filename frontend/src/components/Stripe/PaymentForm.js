@@ -29,6 +29,7 @@ const PaymentForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const { navigate } = useContext(dataContext);
+  const [isPending, setIspending] = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,6 +48,7 @@ const PaymentForm = () => {
 
         if (response.data.success) {
           console.log("successful payment");
+          setIspending(false);
           setSuccess(true);
         }
       } catch (error) {
@@ -56,6 +58,12 @@ const PaymentForm = () => {
       console.log(error.message);
     }
   };
+
+  // const handleClick = () => {
+  //   if(isPending) {
+  //     return <div>Processing Payment</div>
+  //   }
+  // }
 
   return (
     <PayForm>
@@ -69,10 +77,7 @@ const PaymentForm = () => {
           <button>Pay</button>
         </form>
       ) : (
-        // <div>
-        //   <h2>Purchase is Successful</h2>
-        // </div>
-        navigate("/main")
+        navigate("/Thanks")
       )}
     </PayForm>
   );
