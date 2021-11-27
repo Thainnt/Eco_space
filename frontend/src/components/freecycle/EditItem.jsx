@@ -29,6 +29,7 @@ export default function NewItem() {
     }).then(res => {
       console.log("success");
       fetchAllItems();
+      clear();
     }).catch(err => {
       console.log("can not create: ",err);
     })
@@ -45,6 +46,14 @@ export default function NewItem() {
     setImage_url(item.image_url);
   };
 
+  function clear() {
+    setCategoryName("Others");
+    setName("");
+    setQuantity(1);
+    setDescription("");
+    setImage_url("");
+  }
+
   if (categories.find(category => category.id === 0)) {
     categories.shift();
   }
@@ -53,7 +62,7 @@ export default function NewItem() {
   
   return (
     <div className="new-item">
-      <h1>Create new item</h1>
+      <h1>Make any change of your post here:</h1>
       <ItemForm
         categories={categories}
         categoryName={categoryName}

@@ -1,3 +1,4 @@
+import "./CategoryList.css";
 
 export default function CategoryList(props) {
 
@@ -6,7 +7,7 @@ export default function CategoryList(props) {
   );
   
   return (
-      <select name="categories" id="category-select" value={props.categoryName} onChange={event => props.setCategoryName(event.target.value)}>
+      <select name="categories" id="category-select" value={props.categoryName} onChange={event => props.setCategoryName(event.target.value)} className="category-list">
         {categoryList}
       </select>
   );
