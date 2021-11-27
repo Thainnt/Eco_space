@@ -23,6 +23,20 @@ export const Container = styled.div`
   }
 `;
 
+export const Box = styled.div`
+  width: 100wh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+  }
+`;
+
 export const Wrapper = styled(Container)`
   width: 90%;
   margin: 2em auto;

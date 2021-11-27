@@ -25,7 +25,7 @@ const Product = () => {
 
   const handleSubmit = (id, e) => {
     e.preventDefault();
-    axios.post("/api/store/products" + id, {
+    axios.put("/api/store/products" + id, {
       id: id
     })
     .then(response => {

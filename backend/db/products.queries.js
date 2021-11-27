@@ -47,7 +47,9 @@ const updateProductAsSold = (id) => {
   return db.query(
     `
     UPDATE products
-    SET is_sold = NOT is_sold WHERE id = $1;`,
+    SET is_sold = true,
+    WHERE id = $1
+    returning *;`,
     [`${id}`]
   );
 };
