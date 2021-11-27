@@ -15,7 +15,6 @@ router.get("/products", (req, res) => {
 
 //products/:id (GET)
 router.get("/products/:id", (req, res) => {
-  console.log("reqqqqqqqqq", req.params);
   const prod_id = req.params.id;
   storePQueries.getSingleStoreProduct(prod_id).then((response) => {
     // console.log(response);
@@ -30,7 +29,8 @@ router.get("/products/:id", (req, res) => {
 });
 //products (POST, creat new post)
 router.post("/new", (req, res) => {
-  const Pname = req.body.name;
+  console.log(req);
+  const name = req.body.name;
   const quantity = req.body.quantity;
   const description = req.body.description;
   const image_url = req.body.image_url;
@@ -40,7 +40,7 @@ router.post("/new", (req, res) => {
   let is_paid = req.body.is_paid;
   let amount = req.body.amount;
   let product = {
-    Pname,
+    name,
     quantity,
     description,
     image_url,
@@ -64,30 +64,30 @@ router.post("/new", (req, res) => {
     });
 });
 
-router.put("/products/:id", (req, res) => {
+router.post("/products/:id", (req, res) => {
   const id = parseInt(req.params.id);
   console.log("this===>", req);
   productQueries
     .updateProductAsSold(id)
     .then((response) => {
-      const updatedProduct = response.rows[0];
+      console.log("response", response);
       res.status(200).send(`product modified with id: ${id}`);
-      res.send({ ...updatedProduct });
     })
-    .error((error) => {
+    .catch((error) => {
       res.status(400).send("can not alter product");
     });
 });
 
 router.delete("/products/:id", (req, res) => {
+  console.log("delete", req);
   const id = parseInt(req.params.id);
   productQueries
     .deleteProduct(id)
     .then((response) => {
       res.status(200).send(`Product deleted with id: ${id}`);
     })
-    .error((error) => {
-      throw error;
+    .catch((error) => {
+      console.log("error", error);
     });
 });
 

@@ -1,8 +1,9 @@
 import { Button } from "@mui/material";
 import { Menu } from "@mui/material";
 import { MenuItem } from "@mui/material";
-import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { dataContext } from "../../Hooks/ContextProvider";
 
 const Admin = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -44,8 +45,12 @@ const Admin = () => {
           "aria-labelledby": "button",
         }}
       >
-        <MenuItem onClick={handleEditClick}>Edit Products</MenuItem>
-        <MenuItem onClick={handleAddClick}>Add New Product</MenuItem>
+        <Link to="/Edit">
+          <MenuItem onClick={handleEditClick}>Edit Products</MenuItem>
+        </Link>
+        <Link to="/Add">
+          <MenuItem onClick={handleAddClick}>Add New Product</MenuItem>
+        </Link>
       </Menu>
     </div>
   );
