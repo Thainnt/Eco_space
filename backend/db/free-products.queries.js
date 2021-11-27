@@ -28,13 +28,25 @@ const getSingleProduct = (id) => {
 const addNewItem = (item) => {
   return db
     .query(
-      `INSERT INTO products (name, quantity, description, image_url, seller_id, category_id, location, is_sold, is_paid, amount)
-          VALUES ($1, $2, $3, $4, $5, $6, $7, false, false, null) RETURNING *;`,
+      `INSERT INTO products (name, quantity, description, image_url, seller_id, category_id, location, created_at, is_sold, is_paid, amount)
+          VALUES ($1, $2, $3, $4, $5, $6, $7, LOCALTIMESTAMP, false, false, null) RETURNING *;`,
           [`${item.name}`, `${item.quantity}`, `${item.description}`, `${item.image_url}`, `${item.seller_id}`, `${item.category_id}`, `${item.location}`]
     ).then(res => {
       if(res.rows.length) {
         return res.rows[0];
       }
+    });
+};
+
+const editItem = (item) => {
+  return db
+    .query(
+      `UPDATE products SET (name, quantity, description, image_url) = ($1, $2, $3, $4) WHERE id= $5 RETURNING *;`,[`${item.name}`, `${item.quantity}`, `${item.description}`, `${item.image_url}`, `${item.id}`]
+    ).then(res =>{
+      console.log(res);
+      // if(res.rows.length) {
+      //   return res.row[0];
+      // }
     });
 };
 
@@ -44,5 +56,6 @@ module.exports = {
   getFreeProductsBylocation,
   getCategories,
   getSingleProduct,
-  addNewItem
+  addNewItem,
+  editItem
 };

@@ -3,7 +3,7 @@ import { useEffect, useState} from "react";
 import { useParams } from "react-router";
 
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ContainerDetails } from "../styles/ContainerDetails.styled";
 import { MyArrow } from "../styles/Button.styled";
 import { dataContext } from "../../Hooks/ContextProvider";
@@ -11,7 +11,7 @@ import { useContext } from "react";
 
 
 export default function ItemDetails() {
-  const { navigate } = useContext(dataContext)
+  const { navigate, user, fetchAllItems } = useContext(dataContext)
   const { id } = useParams();
   const [item, setItem] = useState({});
   useEffect(() => {
@@ -25,6 +25,19 @@ export default function ItemDetails() {
 
   const handleClick = () => navigate(-1);
 
+  const is_owner = item.seller_id === user.id;
+  console.log('item:', item, 'owner:', is_owner);
+
+  const deleteItem = (itemId) => {
+    axios.delete(`/api/freecycle/items/${itemId}`)
+    .then(res => {
+      console.log("deleted", res);
+      fetchAllItems();
+    }).catch(err => {
+      console.error(err);
+    });
+  };
+
   return ( 
     <ContainerDetails>
       <MyArrow onClick={handleClick} />
@@ -36,22 +49,27 @@ export default function ItemDetails() {
             <h2>{item.name}</h2>
             <p>{item.location}</p>
             <p>{item.description}</p>
-            <Link to="/Message">
-            <button>Contact Owner</button>
-            </Link>
+            {is_owner ? 
+              <div>
+                <Link to="/listed-items">
+                  <button 
+                    className="user-dashboard__del"
+                    onClick={() => {
+                      deleteItem(item.id);
+                    }}>Delete
+                  </button>
+                </Link>
+                <Link to={`/freecycle/edit/${id}`}>
+                  <button className="user-dashboard__del">Edit</button>
+                </Link>
+              </div> :
+              <Link to="/Message">
+                <button>Contact Owner</button>
+              </Link>
+              }
           </span>
         </div>
       )}
     </ContainerDetails>
-    // <section className="item-details">
-    //   <h2>{item.name}</h2>
-    //   <img className="item-details-image" src={item.image_url} alt={item.name}/>
-    //   <p className="item-details-desc">{item.description}</p>
-    //   <span className="item-details-loc">Location: {item.location}</span>
-    //   <br/>
-    //   <Link to="/Message">
-    //   <button className="item-details-contact">Contact owner</button>
-    //   </Link>
-    // </section>
   )
 }
