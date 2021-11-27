@@ -2,7 +2,7 @@ import{ Link } from "react-router-dom";
 import { MyArrow } from "../styles/Button.styled";
 import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";
-import { Container } from "../styles/Container.styled";
+import { Container, Header } from "../styles/Container.styled";
 
 
 
@@ -16,25 +16,34 @@ export default function ItemList(props) {
   }
   return (
     <>
+    <Header>
+    <h2 className="title">{title}</h2>
+    </Header>
+    
+    
      <MyArrow onClick={handleClick} />
-    <h2>{title}</h2>
-    <Container>
+      
+    
+      <Container>
+    
       {itemsByCategory.map((item)  => (
         <div className="product-preview" key={item.id}>
           <Link to={`/freecycle/items/${item.id}`} >
             <div className="item_card">
-              <img style={myStyles} className="item_image" src={item.image_url} alt={item.name}/>
+              <img style={myStyles} className="item_freecycle" src={item.image_url} alt={item.name}/>
               <span className="item_content">
-                <span className="item_name">
+                <span className="name_under_image">
                    {item.name}
                 </span>
-                   
                 </span>
                 </div>
           </Link>
+          
         </div>
+     
       ) )}
     </Container>
+   
     </>
 
 );
