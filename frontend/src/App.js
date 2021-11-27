@@ -18,7 +18,7 @@ import Add from "./components/Admin/Add";
 import Edit from "./components/Admin/Edit";
 import Product from "./components/Admin/Product";
 import EditItem from "./components/freecycle/EditItem";
-
+import Thanks from "./components/Pages/Thanks";
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
         <Route path="/freecycle/new" element={<NewItem />}>
           <Route index element={<ItemList />} />
         </Route>
-        <Route path="/freecycle/edit/:id" element={<EditItem />}/>
+        <Route path="/freecycle/edit/:id" element={<EditItem />} />
         <Route path="/freecycle/items/:id" element={<ItemDetails />} />
         <Route path="Message" element={<Message />} />
         <Route exact path="/listed-items" element={<UserDashboard />} />
@@ -45,6 +45,7 @@ function App() {
         <Route path="/Add" element={<Add />} />
         <Route path="/Edit" element={<Edit />} />
         <Route path="/product/:id" element={<Product />} />
+        <Route path="Thanks" element={<Thanks />} />
       </Routes>
     </div>
   );

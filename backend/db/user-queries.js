@@ -3,6 +3,7 @@ const db = require("./db");
 const getAllUsers = () => {
   return db.query(`SELECT * FROM users;`);
 };
+
 const addUser = (user) => {
   return db
     .query(

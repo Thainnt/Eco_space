@@ -64,7 +64,7 @@ router.post("/new", (req, res) => {
     });
 });
 
-router.post("/products/:id", (req, res) => {
+router.put("/products/:id", (req, res) => {
   const id = parseInt(req.params.id);
   console.log("this===>", req);
   productQueries
