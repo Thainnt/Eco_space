@@ -3,8 +3,7 @@ import axios from "axios";
 import { StyledIcon } from "../styles/Icon";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Badge } from "@mui/material";
-import { Button } from "@mui/material";
-import { Container, Wrapper, Logo, Left, Right, MenuItem } from "../styles/nav.styled";
+import { Container, Wrapper, Logo, MenuItem, } from "../styles/nav.styled";
 import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";
 
@@ -26,10 +25,10 @@ const Nav = () => {
   return (
     <Container class='navbar'>
       <Wrapper>
-        <Left>
+
           <Logo>Eco Space</Logo>
-        </Left>
-        <Right>
+
+        <div>
           <Link to="/">
             <MenuItem>HOME</MenuItem>
           </Link>
@@ -47,9 +46,9 @@ const Nav = () => {
           </MenuItem>
         </Link>
         {userName.length > 0 ? (
-            <MenuItem>
-              <Button color="primary" onClick={handleClick}>LOG OUT</Button>
-            </MenuItem>
+            
+              <button onClick={handleClick}>LOG OUT</button>
+            
         ):(
           <Link to="/Login">
             <MenuItem>
@@ -58,7 +57,7 @@ const Nav = () => {
           </Link>
         )}
         
-        </Right> 
+        </div> 
       </Wrapper>
     </Container>
   )
