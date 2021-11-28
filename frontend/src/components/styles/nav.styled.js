@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: sticky;
   top: 0;
-  margin-bottom: 3em;
+  /* margin-bottom: 3em; */
   /* background-color: lavenderblush; */
 `;
 
@@ -12,18 +12,12 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  /* border-bottom: 1px solid blanchedalmond; */
 
   button {
     padding: 9px 25px;
     background-color: #1976d1;
     border: none;
-    background-image: linear-gradient(
-      to right,
-      #141e30 0%,
-      #243b55 51%,
-      #141e30 100%
-    );
-
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;

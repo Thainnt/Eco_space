@@ -1,12 +1,12 @@
 INSERT INTO users (name, email, password, is_admin)
   VALUES 
-  ('salim', 'salim@example.com', 'password', TRUE),
+  ('SALIM', 'salim@example.com', 'password', TRUE),
 
-  ('thai ', 'thai@example.com', 'password', TRUE),
+  ('THAI ', 'thai@example.com', 'password', TRUE),
 
-  ('farid', 'farid@example.com', 'password', TRUE),
+  ('FARID', 'farid@example.com', 'password', TRUE),
 
-  ('kevin', 'kevin@example.com', 'password', FALSE),
+  ('KEVIN', 'kevin@example.com', 'password', FALSE),
 
-  ('Karen', 'karen@example.com', 'password', FALSE);
+  ('KAREN', 'karen@example.com', 'password', FALSE);
   

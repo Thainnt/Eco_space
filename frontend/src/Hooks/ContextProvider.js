@@ -17,19 +17,23 @@ export default function ContextProvider(props) {
   const [allItems, setAllItems] = useState([]);
 
   const fetchAllItems = () => {
-    axios.get("/api/freecycle/items")
-    .then(res => {
-      setAllItems(res.data.products);
-    }).catch((err) => {
-      console.error(err);
-    });
+    axios
+      .get("/api/freecycle/items")
+      .then((res) => {
+        setAllItems(res.data.products);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   useEffect(() => {
-    axios.get("/api/freecycle/categories")
-      .then(res => {
+    axios
+      .get("/api/freecycle/categories")
+      .then((res) => {
         setCategories(res.data.categories);
-      }).catch((err) => {
+      })
+      .catch((err) => {
         console.error(err);
       });
 
@@ -38,7 +42,10 @@ export default function ContextProvider(props) {
 
   useEffect(() => {
     setUser(
-      localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {});
+      localStorage.getItem("user")
+        ? JSON.parse(localStorage.getItem("user"))
+        : {}
+    );
   }, []);
 
   useEffect(() => {
@@ -97,7 +104,8 @@ export default function ContextProvider(props) {
     categories,
     allItems,
     user,
-    fetchAllItems
+    fetchAllItems,
+    setItem,
   };
 
   return (
