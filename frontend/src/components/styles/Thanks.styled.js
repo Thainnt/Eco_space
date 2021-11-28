@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100wh;
-  height: 100vh;
+  height: calc(100vh - 116px);
   background: linear-gradient(to right, #232526, #414345);
   display: flex;
   align-items: center;

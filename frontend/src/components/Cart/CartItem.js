@@ -17,23 +17,23 @@ const CartItem = () => {
               <p>Total: ${item.amount * item.quantity}</p>
             </div>
             <div className="buttons">
-              <Button
+              <button
                 size="small"
                 disableElevation
                 variant="contained"
                 onClick={() => removeItem(item.id)}
               >
                 -
-              </Button>
-              <p>{item.quantity}</p>
-              <Button
+              </button>
+              <p className='quantity'>{item.quantity}</p>
+              <button
                 size="small"
                 disableElevation
                 variant="contained"
                 onClick={() => addItemToCart(item)}
               >
                 +
-              </Button>
+              </button>
             </div>
           </div>
           <img src={item.image_url} alt={item.name} />

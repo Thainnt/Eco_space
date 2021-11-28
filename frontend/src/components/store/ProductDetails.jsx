@@ -30,19 +30,20 @@ const ProductsDetails = () => {
 
   return ( 
     <ContainerDetails>
-      <MyArrow onClick={handleClick} />
 
       {product && (
-          <div className="box">
+        <div className="box">
+            <MyArrow onClick={handleClick} />
+            <div className="info">
             <img src={product.image_url} alt={product.name} className="item_image" />
             <span className="content">
               <h2>{product.name}</h2>
               <p>$ {product.amount} CAD</p>
-              <p>Quantity</p>
-              <button onClick={() => addItemToCart(product)}>ADD TO CART</button>
               <p>{product.description}</p>
               <p>Set yourself up to reduce plastic with our Eco Space products</p>
+              <button onClick={() => addItemToCart(product)}>ADD TO CART</button>
             </span>
+            </div>
           </div>
       )}
     </ContainerDetails>

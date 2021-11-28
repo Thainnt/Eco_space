@@ -28,6 +28,7 @@ export const Box = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-top: 1.5em;
 
   .top {
     display: flex;
@@ -57,6 +58,11 @@ export const Wrapper = styled(Container)`
   }
   .item_image {
     width: 300px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 1em;
   }
 `;
 

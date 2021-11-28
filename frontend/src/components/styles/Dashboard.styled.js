@@ -4,12 +4,15 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100wh;
-  height: 100vh;
-  margin-top: 1em;
+  height: calc(100vh - 150px);
+  /* margin-top: 1em; */
+  /* background-image: url("https://www.homerenoguru.sg/wp-content/uploads/main-article-021.jpg");
+  background-repeat: no-repeat;
+  background-size: contain; */
 
   .motto {
     align-self: center;
-    background: linear-gradient(to right, #000000, #434343);;
+    background: linear-gradient(to right, #000000, #434343);
     width: 100vw;
     position: relative;
     // margin-right: -35vw;
@@ -31,7 +34,6 @@ export const Container = styled.div`
     margin-top: 4em;
   }
   a {
-  padding: 0.2rem 0.3rem;
-
+    padding: 0.2rem 0.3rem;
   }
 `;

@@ -14,4 +14,5 @@ export const Wrapper = styled.div`
   .image {
     width: 100%;
   }
+
 `;

@@ -77,13 +77,13 @@ const Edit = () => {
                     <span className="item_price"> $ {product.amount} CAD </span>
                   </span>
                 </span>
-                <div>
+                <div className="buttons">
                   <Link to={`/product/${product.id}`}>
-                    <Button>Edit Product</Button>
+                    <button>Edit Product</button>
                   </Link>
-                  <Button onClick={() => handleDelete(product.id)}>
+                  <button onClick={() => handleDelete(product.id)}>
                     Delete Product
-                  </Button>
+                  </button>
                 </div>
               </div>
             </div>

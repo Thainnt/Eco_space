@@ -25,6 +25,8 @@ const CARD_OPTIONS = {
 };
 
 const PaymentForm = () => {
+  const { setItem } = useContext(dataContext);
+
   const [success, setSuccess] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
@@ -50,6 +52,7 @@ const PaymentForm = () => {
           console.log("successful payment");
           setIspending(false);
           setSuccess(true);
+          setItem([]);
         }
       } catch (error) {
         console.log("Error", error);

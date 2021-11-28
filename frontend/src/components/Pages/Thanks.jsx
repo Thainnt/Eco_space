@@ -10,7 +10,7 @@ const Thanks = () => {
         <h4>Thank you<br />For Your Purchase! </h4>
         <div>
           <Link to="/store">
-            <Button>Continue Shopping</Button>
+            <button>Continue Shopping</button>
           </Link>
         </div>
       </div>

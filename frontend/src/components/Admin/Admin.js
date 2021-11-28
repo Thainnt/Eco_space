@@ -27,7 +27,7 @@ const Admin = () => {
 
   return (
     <div>
-      <Button
+      <button
         id="button"
         aria-controls="menu"
         onClick={handleClick}
@@ -35,7 +35,7 @@ const Admin = () => {
         aria-expanded={open ? "true" : undefined}
       >
         ADMIN
-      </Button>
+      </button>
       <Menu
         id="menu"
         anchorEl={anchorEl}

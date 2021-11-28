@@ -31,15 +31,15 @@ const Cart = () => {
       ) : (
         <>
           <CartItem />
-          <p>subtotal: ${subTotal.toFixed(2)}</p>
-          <p>Tax: ${tax.toFixed(2)}</p>
+          <h6>subtotal: ${subTotal.toFixed(2)}</h6>
+          <h6>Tax: ${tax.toFixed(2)}</h6>
           <h3>Total: {total.toFixed(2)}</h3>
         </>
       )}
       {showitem ? (
         <StripeContainer />
       ) : (
-        <Button onClick={handleClick}>CHECK OUT</Button>
+        <button onClick={handleClick}>CHECK OUT</button>
       )}
     </Wrapper>
   );
