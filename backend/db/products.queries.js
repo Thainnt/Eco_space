@@ -47,7 +47,7 @@ const updateProductAsSold = (id) => {
   return db.query(
     `
     UPDATE products
-    SET is_sold = true,
+    SET is_sold = true
     WHERE id = $1
     returning *;`,
     [`${id}`]

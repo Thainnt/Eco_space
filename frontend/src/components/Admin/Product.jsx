@@ -9,8 +9,13 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const Product = () => {
   const { id } = useParams()
-  const [product, setProduct] = useState({})
-  const [is_sold, setIs_sold] = useState('')
+  const [product, setProduct] = useState({
+    name: '',
+    description: '',
+    quantity: 0,
+    amount: 0
+  })
+  const [is_sold, setIs_sold] = useState(false)
   const [open, setOpen] = useState(false);
   const [response, setResponse] = useState("");
 
@@ -23,9 +28,10 @@ const Product = () => {
       })
   }, [id]);
 
-  const handleSubmit = (id, e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put("/api/store/products" + id, {
+    console.log("/api/store/products/" + id)
+    axios.put("/api/store/products/" + id, {
       id: id
     })
     .then(response => {
@@ -63,29 +69,27 @@ const Product = () => {
       <div className="image_div">
         <img className="image" src={product.image_url} alt={product.name} />
       </div>
-      <Form onSubmit={() => handleSubmit(product.id)}>
+      <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formGridName">
             <Form.Label>Name</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter product name"
-              value={product.name}
+              defaultValue={product.name}
+
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formGridDesc">
             <Form.Label>Description</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter product description"
-              value={product.description}
+              defaultValue={product.description}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formGridQuantity">
             <Form.Label>Quantity</Form.Label>
             <Form.Control
               type="number"
-              placeholder="Enter quantity"
-              value={product.quantity}
+              defaultValue={product.quantity}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formGridSold">
@@ -101,8 +105,7 @@ const Product = () => {
             <Form.Label>Price</Form.Label>
             <Form.Control
               type="number"
-              value={product.amount}
-              placeholder="Enter product price"
+              defaultValue={product.amount}
             />
           </Form.Group>
         <Button variant="primary" type="submit">

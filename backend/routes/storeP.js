@@ -66,7 +66,7 @@ router.post("/new", (req, res) => {
 
 router.put("/products/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  console.log("this===>", req);
+  console.log("this===>", req.params);
   productQueries
     .updateProductAsSold(id)
     .then((response) => {
@@ -74,6 +74,7 @@ router.put("/products/:id", (req, res) => {
       res.status(200).send(`product modified with id: ${id}`);
     })
     .catch((error) => {
+      console.log("errorrrr", error);
       res.status(400).send("can not alter product");
     });
 });
