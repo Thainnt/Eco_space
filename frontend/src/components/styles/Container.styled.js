@@ -21,6 +21,17 @@ export const Container = styled.div`
     border-radius: 2rem;
     // background-color: black;
   }
+  .red {
+    /* background-color: red; */
+    opacity: 0.7;
+  }
+  .sold {
+    font-weight: 900;
+    font-size: 16px;
+  }
+  .out {
+    color: red;
+  }
 `;
 
 export const Box = styled.div`
