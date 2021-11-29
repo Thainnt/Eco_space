@@ -63,6 +63,9 @@ export default function ItemDetails() {
                 <Link to={`/freecycle/edit/${id}`}>
                   <button className="user-dashboard__del">Edit</button>
                 </Link>
+                <Link to="/Message">
+                <button>Message</button>
+              </Link>
               </div> :
               <Link to="/Message">
                 <button>Contact Owner</button>
