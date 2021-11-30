@@ -49,7 +49,6 @@ const PaymentForm = () => {
         });
 
         if (response.data.success) {
-          console.log("successful payment");
           setIspending(false);
           setSuccess(true);
           setItem([]);

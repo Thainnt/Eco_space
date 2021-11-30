@@ -25,7 +25,6 @@ export default function NewItem() {
       location: location,
       seller_id: seller_id
     }).then(res => {
-      console.log("success");
       fetchAllItems();
     }).catch(err => {
       console.log("can not create: ",err);

@@ -18,7 +18,6 @@ export default function About(props) {
       description: description
     }).then(res => {
       const contact = res.data;
-      console.log(`contact ${contact}`)
     }).catch(err => {
       console.log(err)
     })

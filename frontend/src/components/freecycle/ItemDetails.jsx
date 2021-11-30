@@ -26,7 +26,6 @@ export default function ItemDetails() {
   const handleClick = () => navigate(-1);
 
   const is_owner = item.seller_id === user.id;
-  console.log('item:', item, 'owner:', is_owner);
 
   const deleteItem = (itemId) => {
     axios.delete(`/api/freecycle/items/${itemId}`)

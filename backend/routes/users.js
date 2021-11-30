@@ -30,7 +30,6 @@ router.post("/login", (req, res) => {
         .status(404)
         .send({ status: "Error", message: "Can not find email" });
     } else {
-      // console.log(response.rows[0]);
       req.session.user_id = response.rows[0].id;
       // req.session.user_name = response.rows[0].name;
       // have this redirect to appropriate page
@@ -39,7 +38,6 @@ router.post("/login", (req, res) => {
       // delete user.password;
       const userFromDb = response.rows[0];
       res.send({ ...userFromDb });
-      // console.log({ ...userFromDb });
     }
   });
 });
