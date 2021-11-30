@@ -62,7 +62,7 @@ export default function NewItem() {
   
   return (
     <div className="new-item">
-      <h1>Make any change of your post here:</h1>
+      <h3>Edit your post:</h3>
       <ItemForm
         categories={categories}
         categoryName={categoryName}

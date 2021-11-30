@@ -52,7 +52,7 @@ export default function NewItem() {
 
   return (
     <div className="new-item">
-      <h1>Create new item</h1>
+      <h3>Create new item</h3>
       <ItemForm
         categories={categories}
         categoryName={categoryName}

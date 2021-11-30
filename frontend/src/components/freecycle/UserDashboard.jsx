@@ -14,6 +14,7 @@ export default function UserDashboard() {
   // console.log("user", user, "items", itemsByUser);
   return (
       <section className="item-show">
+        <h3>Your items</h3>
         {itemsByUser && <ItemList
           itemsByCategory={itemsByUser}
           title="Your items"
