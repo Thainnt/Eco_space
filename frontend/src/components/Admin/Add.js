@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import Wrapper from "../styles/Add.styled";
+import { MyArrow } from "../styles/Button.styled";
+import { useNavigate } from "react-router";
 
 const Add = () => {
   const [name, setName] = useState("");
@@ -14,6 +16,7 @@ const Add = () => {
   const [is_sold, setIs_sold] = useState(false);
   const [is_paid, setIs_paid] = useState(true);
   const [amount, setAmount] = useState(0);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,8 +40,11 @@ const Add = () => {
       });
   };
 
+  const handleClick = () => navigate(-1);
+
   return (
     <Wrapper>
+      <MyArrow onClick={handleClick} />
       <Form onSubmit={handleSubmit}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridName">

@@ -5,6 +5,9 @@ import { Form, Row, Col, Button } from "react-bootstrap";
 import { Wrapper } from "../styles/Edit.styled";
 import { Alert, IconButton, Collapse } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { MyArrow } from "../styles/Button.styled";
+import { useNavigate } from "react-router";
+
 
 
 const Product = () => {
@@ -18,6 +21,7 @@ const Product = () => {
   const [is_sold, setIs_sold] = useState(false)
   const [open, setOpen] = useState(false);
   const [response, setResponse] = useState("");
+  const navigate = useNavigate();
 
 
 
@@ -42,6 +46,8 @@ const Product = () => {
       }
     })
   }
+  const handleClick = () => navigate(-1);
+
 
   return (
     <Wrapper>
@@ -66,6 +72,8 @@ const Product = () => {
             </Alert>
           </Collapse>
         )}
+        <MyArrow onClick={handleClick} />
+
       <div className="image_div">
         <img className="image" src={product.image_url} alt={product.name} />
       </div>

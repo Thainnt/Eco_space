@@ -6,6 +6,8 @@ import { Badge } from "@mui/material";
 import { Container, Wrapper, Logo, MenuItem, } from "../styles/nav.styled";
 import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";
+import LogoutIcon from '@mui/icons-material/Logout';
+import LoginIcon from '@mui/icons-material/Login';
 
 const Nav = () => {
 
@@ -47,13 +49,12 @@ const Nav = () => {
         </Link>
         {userName.length > 0 ? (
             
-              <button onClick={handleClick}>LOG OUT</button>
+              // <button onClick={handleClick}>LOG OUT</button>
+              <LogoutIcon onClick={handleClick} fontSize="medium" />
             
         ):(
           <Link to="/Login">
-            <MenuItem>
-            <StyledIcon size={25} />
-            </MenuItem>
+            <LoginIcon fontSize="medium" color="inherit"/>
           </Link>
         )}
         

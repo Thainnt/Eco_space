@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: sticky;
   top: 0;
-  background: linear-gradient(to right, #ece9e6, #ffffff);
+  background: #acdf87;
   /* margin-bottom: 3em; */
   /* background-color: lavenderblush; */
 `;

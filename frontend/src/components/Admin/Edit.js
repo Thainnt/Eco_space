@@ -5,11 +5,14 @@ import axios from "axios";
 import Button from "@mui/material/Button";
 import { Alert, IconButton, Collapse } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { MyArrow } from "../styles/Button.styled";
+import { useNavigate } from "react-router";
 
 const Edit = () => {
   const [products, setProducts] = useState([]);
   const [open, setOpen] = useState(false);
   const [response, setResponse] = useState("");
+  const navigate = useNavigate();
 
   const getAllproduct = () => {
     axios.get("/api/store/products").then((response) => {
@@ -36,6 +39,7 @@ const Edit = () => {
   };
 
   const handleEdit = () => null;
+  const handleClick = () => navigate(-1);
 
   return (
     <Wrapper>
@@ -61,6 +65,8 @@ const Edit = () => {
             </Alert>
           </Collapse>
         )}
+        <MyArrow onClick={handleClick} />
+
         {products.map((product) => (
           <div className="product-preview" key={product.id}>
             <div className="item_card">
