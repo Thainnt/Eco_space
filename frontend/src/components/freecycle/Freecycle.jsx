@@ -1,5 +1,6 @@
 import { useState, useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
+import { MyArrow } from "../styles/Button.styled";
 
 import { dataContext } from "../../Hooks/ContextProvider";
 
@@ -10,6 +11,8 @@ import Button from "@mui/material/Button";
 
 
 export default function Freecycle() {
+  const { navigate } = useContext(dataContext)
+  const handleClick = () => navigate(-1);
 
   const  { categories, allItems } = useContext(dataContext);
   const freeItems = allItems.filter(item => item.is_paid === false);
@@ -35,9 +38,8 @@ export default function Freecycle() {
   
   return (
     <main className="layout">
-      <Link to={"new"}>
-        <Button className="create-new-item-button">Create New Item</Button>
-      </Link>
+      <div className="free-style">
+      <MyArrow onClick={handleClick} />
       <section className="sidebar">
         <label>Categories</label><br/>
         <CategoryList
@@ -46,6 +48,10 @@ export default function Freecycle() {
          categories = {categories}
         />
       </section>
+      <Link to={"new"}>
+        <button className="create-new-item-button">Create New Item</button>
+      </Link>
+      </div>
       <section className="item-show">
         {itemsByCategory && <ItemList
           itemsByCategory={itemsByCategory}

@@ -9,6 +9,8 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     font-family: 'Cormorant Garamon';
+    /* background-color: #4a5162; */
+    /* color: white; */
   }
   a {
     text-decoration: none;
@@ -16,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
 
   button {
     padding: 9px 25px;
-    background-color: #1976d1;
+    background-color: #726dfe;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -24,7 +26,7 @@ const GlobalStyles = createGlobalStyle`
     color: white;
 
     &:hover {
-      background-color: burlywood;
+      background-color: #938ffe;
     }
   }
 `;

@@ -22,9 +22,13 @@ const ProductList = (props) => {
       </div>
       <Container>
         {products.map((product) => (
-          <div className="product-preview" key={product.id}>
-            <Link to={`/products/${product.id}`}>
-            <div className="item_card">
+          
+          <div className="product-preview " key={product.id}>
+            <Link to={ product.is_sold ? `#` : `/products/${product.id}`}>
+            <div className={`item_card ${product.is_sold ? 'red' : null}`}> 
+              {!product.is_sold ? null : (
+                <span className="out">SOLD OUT!!</span>
+              )}
               <img src={product.image_url} alt={product.name} className="item_image" />
               <span className="item_content">
                 <span className="item_name">{product.name}</span>

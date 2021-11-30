@@ -4,6 +4,7 @@ import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";
 import { MyArrow } from "../styles/Button.styled";
 import { Container } from "../styles/Container.styled";
+import { Card, Button} from 'react-bootstrap';
 
 
 
@@ -12,8 +13,8 @@ export default function ItemList(props) {
   const { itemsByCategory, title, is_userDashboard } = props;
   const handleClick = () => navigate(-1);
   const myStyles = {
-    width:"400px",
-    height:"450px"
+    width:"350px",
+    height:"350px"
   }
 
   const deleteItem = (id) => {
@@ -55,16 +56,24 @@ export default function ItemList(props) {
             }}
           >Delete</button>}
       </div>
+
+      // <Card style={{ width: '18rem' }} key={item.id}>
+      //   <Card.Img variant="top" src={item.image_url} />
+      //   <Card.Body>
+      //     <Card.Title>{item.name}</Card.Title>
+      //     <Link to={`/freecycle/items/${item.id}`}>
+      //       <Button variant="primary" >View Item Details</Button>
+      //     </Link>
+      //   </Card.Body>
+      // </Card>
     );
   });
 
   return (
-    <>
-    <MyArrow onClick={handleClick} />
-    <h2>{title}</h2>
+    
     <Container>
       {itemCard}
     </Container>
-    </>
+    
   );
 }

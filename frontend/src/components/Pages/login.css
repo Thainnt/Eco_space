@@ -1,42 +1,18 @@
-.container {
-  width:40%;
-  margin-top:250px;
-  
+.login {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.button {
-  width:15%;
-  margin: 25px auto;
-  border-radius: 8px;
-  background-color: darksalmon;
-  color: white;
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Oswald', sans-serif
+.enter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 10px;
 }
 
-.header {
-  font-family: 'Oswald', sans-serif
-}
-
-input[type=email] {
-  width:100%;
-  border-radius: 8px;
-  border-color: darksalmon ;
-  margin-top:20px ;
-}
-input[type=password] {
-  width:100%;
-  border-radius: 8px;
-  border-color: darksalmon ;
-  margin-top: 20px;
-}
-
-
-
-input[type=email]:focus {
-  background-color:#d9d7d7;
-}
-
-input[type=password]:focus {
-  background-color:#d9d7d7;
+span {
+  align-self: center;
 }

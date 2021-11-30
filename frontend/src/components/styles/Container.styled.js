@@ -14,12 +14,24 @@ export const Container = styled.div`
   .item_content {
     align-self: center;
     margin-top: 1em;
+    color: #726dfe;
   }
   .item_image {
     width: 350px;
     padding: 0 1rem;
     border-radius: 2rem;
     // background-color: black;
+  }
+  .red {
+    /* background-color: red; */
+    opacity: 0.7;
+  }
+  .sold {
+    font-weight: 900;
+    font-size: 16px;
+  }
+  .out {
+    color: red;
   }
 `;
 
