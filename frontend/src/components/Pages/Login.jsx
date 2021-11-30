@@ -22,7 +22,6 @@ function LogIn() {
       password: password
     }).then(res => {
       const user = res.data
-      console.log('user:', user);
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('username', user.name);
 

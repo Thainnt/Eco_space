@@ -11,10 +11,10 @@ font-family: 'Oswald', sans-serif;
 }
 
 .button-container {
-  background-color: white;
+  background-color: transparent;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 

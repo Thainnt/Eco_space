@@ -9,7 +9,6 @@ export default function NewItem() {
   const { id } = useParams();
   const itemId = parseInt(id,10)
   const item = allItems.find(item => item.id === itemId);
-  console.log('item is', item, 'id', itemId,' is:', typeof itemId, 'all', allItems);
 
   let category_id = item.category_id;
   const [name, setName] = useState(item.name);
@@ -62,7 +61,7 @@ export default function NewItem() {
   
   return (
     <div className="new-item">
-      <h1>Make any change of your post here:</h1>
+      <h3>Edit your post:</h3>
       <ItemForm
         categories={categories}
         categoryName={categoryName}

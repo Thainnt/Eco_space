@@ -36,7 +36,6 @@ const Add = () => {
       })
       .then((response) => {
         const newProduct = response.data;
-        console.log(newProduct);
       });
   };
 

@@ -8,7 +8,6 @@ const freePQueries = require("../db/free-products.queries");
 
 router.get("/items", (req, res) => {
   const user_id = req.session.user_id;
-  console.log({ user_id });
   freePQueries
     .getAllProducts()
     .then((response) => {
@@ -68,7 +67,6 @@ router.get("/location", (req, res) => {
 
 router.get("/categories", (req, res) => {
   freePQueries.getCategories().then((response) => {
-    console.log(response.rows);
     const categories = response.rows;
     res.send({ categories: categories });
   });
@@ -108,7 +106,6 @@ router.delete("/items/:id", (req,response) => {
 //update item
 router.put("/items/:id", (req, res) =>{
   const item = req.body;
-  console.log('item', req.params, 'body', req.body);
   freePQueries.editItem(item)
     .then(data =>{
       res.send({status: 200, message: "item deleted"});

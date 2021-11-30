@@ -25,7 +25,6 @@ export default function NewItem() {
       location: location,
       seller_id: seller_id
     }).then(res => {
-      console.log("success");
       fetchAllItems();
     }).catch(err => {
       console.log("can not create: ",err);
@@ -52,7 +51,7 @@ export default function NewItem() {
 
   return (
     <div className="new-item">
-      <h1>Create new item</h1>
+      <h3>Create new item</h3>
       <ItemForm
         categories={categories}
         categoryName={categoryName}

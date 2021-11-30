@@ -11,9 +11,9 @@ export default function UserDashboard() {
     setItemsByUser(allItems.filter(item => item.seller_id === user.id));
   },[user, allItems]);
   
-  // console.log("user", user, "items", itemsByUser);
   return (
       <section className="item-show">
+        <h3>Your items</h3>
         {itemsByUser && <ItemList
           itemsByCategory={itemsByUser}
           title="Your items"

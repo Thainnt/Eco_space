@@ -66,7 +66,6 @@ router.post("/new", (req, res) => {
 
 router.put("/products/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  console.log("this===>", req.params);
   productQueries
     .updateProductAsSold(id)
     .then((response) => {

@@ -84,7 +84,6 @@ export default function ContextProvider(props) {
     setuserName(localStorage.getItem("username") || "");
     const localItems = localStorage.getItem("items");
     if (localItems && localItems.length > 0) {
-      console.log("local-->", localItems);
       // setItem(JSON.parse(localItems));
     } else {
       // setItem([]);
