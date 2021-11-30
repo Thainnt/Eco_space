@@ -83,7 +83,7 @@ export default function ItemForm (props) {
 
 
         <div className="button-container">
-          <Link to="/freecycle">
+          <Link to="/listed-items">
             <Button className="item__cancel">Back</Button>
           </Link>
           <Button type="reset" className="item__reset" onClick={reset}>Reset</Button>

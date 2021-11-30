@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container } from '../styles/messages.styled';
+import { MyArrow } from "../styles/Button.styled";
 import { dataContext } from '../../Hooks/ContextProvider'
 
 function Messages({ socket }) {
-  const { user } = useContext(dataContext);
+  const { user, navigate } = useContext(dataContext);
   const [messages, setMessages] = useState({});
 
   useEffect(() => {
@@ -14,7 +15,8 @@ function Messages({ socket }) {
         return newMessages;
       });
     };
-  
+    
+
     const deleteMessageListener = (messageID) => {
       setMessages((prevMessages) => {
         const newMessages = {...prevMessages};
@@ -33,22 +35,27 @@ function Messages({ socket }) {
     };
   }, [socket]);
 
+  const handleClick = () => navigate(-1);
+
   return (
-    <Container>
-      {[...Object.values(messages)]
-        .sort((a, b) => a.time - b.time)
-        .map((message) => (
-          <div
+    <div>
+      <MyArrow onClick={handleClick} /> 
+      <Container>
+        {[...Object.values(messages)]
+          .sort((a, b) => a.time - b.time)
+          .map((message) => (
+            <div
             key={message.id}
             className="message-container"
             title={`Sent at ${new Date(message.time).toLocaleTimeString()}`}
-          >
-            <span className="message">{message.value}</span>
-            <span className="date">{new Date(message.time).toLocaleTimeString()}</span>
-          </div>
-        ))
-      }
-    </Container>
+            >
+              <span className="message">{message.value}</span>
+              <span className="date">{new Date(message.time).toLocaleTimeString()}</span>
+            </div>
+          ))
+        }
+      </Container>
+    </div>
   );
 }
 
