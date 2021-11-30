@@ -3,15 +3,16 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: sticky;
   top: 0;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
   /* margin-bottom: 3em; */
   /* background-color: lavenderblush; */
 `;
 
 export const Wrapper = styled.div`
-  padding: 30px 5%;
+  padding: 15px 3%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   /* border-bottom: 1px solid blanchedalmond; */
 
   button {
@@ -33,7 +34,7 @@ export const Logo = styled.h1`
   font-family: ${({ theme }) => `${theme.fonts.logo}`};
   font-weight: bold;
   color: black;
-  margin-right: auto;
+  /* margin-right: auto; */
 `;
 
 export const MenuItem = styled.div`

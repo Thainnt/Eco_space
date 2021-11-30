@@ -2,7 +2,9 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
-import './register.css'
+import './login.css'
+import { Form } from "react-bootstrap"
+
 
 
 export default function Register(props) {
@@ -30,46 +32,45 @@ export default function Register(props) {
   
 
   return (
-    <div className="container">
-      <h1 className="header">Register</h1>
-      <form  className="form" onSubmit={handleSubmit}>
-        
-        <label className="form-field">
-        Name
-        <input 
-         type="text"
-         requried 
-         value={name}
-         onChange={(e) => setName(e.target.value)}
-         placeholder="Please enter name"
-         />
-        </label>
+    <div>
+  <Form className="login" onSubmit={handleSubmit}>
 
-        <label className="form-field">
-        Email
-        <input 
-         type="email" 
-         value={email}
-         requried 
-         onChange={(e) => setEmail(e.target.value)}
-         placeholder="Please enter email"
-         />
-        </label>
+  <Form.Group className="mb-3" controlId="formBasicName">
+    <Form.Label>Name</Form.Label>
+    <Form.Control
+    type="text" 
+    placeholder="First name"
+    value={name}
+    onChange={(e) => setName(e.target.value)} />
+  </Form.Group>
 
-        <label className="form-field password-field">
-        Password
-        <input
-         type="password"
-         requried 
-         value={password}
-         onChange={(e) => setPassword(e.target.value)}
-         placeholder="Please enter password"
-         />
-         
-        </label>
-        <button className="button">Register</button>
-        
-      </form>
-    </div>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control 
+    type="email" 
+    placeholder="Enter email"
+    value={email}
+    onChange={(e) =>{setEmail(e.target.value)}}
+    />
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control 
+    type="password" 
+    placeholder="Password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)} />
+  </Form.Group>
+
+
+    <button type="submit">
+      Register
+    </button>
+</Form>
+</div>
   )
 }
