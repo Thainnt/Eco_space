@@ -9,8 +9,9 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     font-family: 'Cormorant Garamon';
-    /* background-color: #4a5162; */
+    background: linear-gradient(to right, #ece9e6, #ffffff)
     /* color: white; */
+
   }
   a {
     text-decoration: none;
