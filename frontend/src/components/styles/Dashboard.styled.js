@@ -6,7 +6,9 @@ export const Container = styled.div`
   width: 100wh;
   height: calc(100vh - 86px);
   /* margin-top: 1em; */
-  background-image: url("https://images.unsplash.com/photo-1546948630-84f64bda3ad8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+  background-image: linear-gradient(black, black),
+    url("https://images.unsplash.com/photo-1546948630-84f64bda3ad8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+  background-blend-mode: saturation;
   background-repeat: no-repeat;
 
   .main-page {
@@ -21,9 +23,10 @@ export const Container = styled.div`
   p {
     text-align: center;
     font-size: 2rem;
-    color: goldenrod;
-    background-color: black;
+    color: white;
+    /* background-color: black; */
     padding: 0.1em 0.7em;
+    border-radius: 50px;
   }
 
   .main-buttons {

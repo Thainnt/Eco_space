@@ -33,14 +33,14 @@ export const Wrapper = styled.div`
 export const Logo = styled.h1`
   font-family: ${({ theme }) => `${theme.fonts.logo}`};
   font-weight: bold;
-  color: black;
+  color: white;
   /* margin-right: auto; */
 `;
 
 export const MenuItem = styled.div`
   display: inline-block;
   padding: 0px 20px;
-  color: black;
+  color: white;
   transition: all 0.3s ease 0s;
 
   &:hover {
