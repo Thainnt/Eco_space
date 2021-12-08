@@ -1,5 +1,5 @@
 # Eco Space
-A mini e-commerce application for environemntally sustainable products. Also features a freeCycle network to encourage reuse.
+A mini e-commerce application for environemntally sustainable products. Also features a Freecycle network to encourage reuse.
 
 ## About Eco Space
 My group members and I share a vision that can help transition to a zerowaste lifestyle. The problem is our landfills and oceans are polluted with plastic debris among other things. And the solution is very simple but it requires a collective effort.
@@ -21,3 +21,13 @@ And that is where Eco space comes in. We all can do with less plastic in our liv
 6. Material Ui
 7. stripe
 8. Boostraps-react
+
+## Screenshots
+### Landing page
+!["Home page screenshot"](https://github.com/Thainnt/Eco_space/blob/main/docs/EcoSpace_landing_page.png?raw=true)
+
+### Freecycle page
+!["Freecycle screenshot"](https://github.com/Thainnt/Eco_space/blob/main/docs/Freecycle_page.png?raw=true)
+
+### Store page
+!["Store screenshot"](https://github.com/Thainnt/Eco_space/blob/main/docs/Store_page.png?raw=true)
