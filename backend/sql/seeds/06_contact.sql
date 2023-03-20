@@ -1,3 +1,3 @@
 INSERT INTO contact (name, email, phone_number, description)
   VALUES 
-  ('CEO', 'ceo@freecycle.free', 123456789, 'CEO of Freecycle app');
+  ('Customer service', 'customerservice@eco.sp', 123456789, 'Customer service');

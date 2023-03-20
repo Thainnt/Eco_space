@@ -1,13 +1,10 @@
 import { useState, useContext, useEffect } from "react";
 import { Link} from "react-router-dom";
 import { MyArrow } from "../styles/Button.styled";
-
 import { dataContext } from "../../Hooks/ContextProvider";
-
 import ItemList from "./ItemList";
 import CategoryList from "./CategoryList";
 import "./Freecycle.css";
-import Button from "@mui/material/Button";
 
 
 export default function Freecycle() {

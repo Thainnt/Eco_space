@@ -1,14 +1,11 @@
 import axios from "axios";
 import { useEffect, useState} from "react";
 import { useParams } from "react-router";
-
-
 import { Link } from "react-router-dom";
 import { ContainerDetails } from "../styles/ContainerDetails.styled";
 import { MyArrow } from "../styles/Button.styled";
 import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";
-
 
 export default function ItemDetails() {
   const { navigate, user, fetchAllItems } = useContext(dataContext)
@@ -42,7 +39,7 @@ export default function ItemDetails() {
       <MyArrow onClick={handleClick} />
 
       {item && (
-        <div className="box">
+        <div className="item__details">
           <img className="item_image" src={item.image_url} alt={item.name}/>
           <span className="content">
             <h2>{item.name}</h2>
@@ -65,9 +62,14 @@ export default function ItemDetails() {
                 <Link to="/Message">
                 <button>Message</button>
               </Link>
-              </div> :
+              </div>
+              : localStorage.getItem('username') ?
               <Link to="/Message">
                 <button>Contact Owner</button>
+              </Link>
+              : 
+              <Link to="/login">
+              <button>Contact Owner</button>
               </Link>
               }
           </span>

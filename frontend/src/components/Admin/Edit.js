@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { myButton, Wrapper } from "../styles/Container.styled";
+import { Wrapper } from "../styles/Container.styled";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Button from "@mui/material/Button";
 import { Alert, IconButton, Collapse } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { MyArrow } from "../styles/Button.styled";
@@ -38,7 +37,6 @@ const Edit = () => {
       });
   };
 
-  const handleEdit = () => null;
   const handleClick = () => navigate(-1);
 
   return (

@@ -31,7 +31,7 @@ const PaymentForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const { navigate } = useContext(dataContext);
-  const [isPending, setIspending] = useState(true);
+  // const [isPending, setIspending] = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,7 +49,7 @@ const PaymentForm = () => {
         });
 
         if (response.data.success) {
-          setIspending(false);
+          // setIspending(false);
           setSuccess(true);
           setItem([]);
         }

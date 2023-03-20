@@ -2,7 +2,6 @@ import CartItem from "./CartItem";
 import { Wrapper } from "../styles/Cart.styled";
 import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext, useState } from "react";
-import { Button } from "@mui/material";
 import StripeContainer from "../Stripe/StripeContainer";
 
 const Cart = () => {

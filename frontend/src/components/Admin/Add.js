@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import Wrapper from "../styles/Add.styled";
 import { MyArrow } from "../styles/Button.styled";
@@ -35,7 +35,7 @@ const Add = () => {
         amount: amount,
       })
       .then((response) => {
-        const newProduct = response.data;
+        // const newProduct = response.data;
       });
   };
 

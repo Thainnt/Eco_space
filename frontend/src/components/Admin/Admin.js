@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { Menu } from "@mui/material";
 import { MenuItem } from "@mui/material";
 import { useContext, useState } from "react";
@@ -8,7 +7,7 @@ import { dataContext } from "../../Hooks/ContextProvider";
 const Admin = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const { navigate, setCartOpen } = useContext(dataContext);
+  const { navigate } = useContext(dataContext);
 
   const handleClick = (e) => {
     setAnchorEl(e.currentTarget);

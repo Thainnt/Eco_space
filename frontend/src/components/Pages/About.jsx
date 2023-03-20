@@ -1,8 +1,8 @@
 import './about.css'
 import axios from "axios"
-import {useEffect, useState} from "react"
+import { useState } from "react"
 
-export default function About(props) {
+export default function About() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
@@ -17,7 +17,7 @@ export default function About(props) {
       telephone:telephone,
       description: description
     }).then(res => {
-      const contact = res.data;
+      console.log(res.data);
     }).catch(err => {
       console.log(err)
     })

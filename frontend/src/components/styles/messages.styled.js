@@ -2,15 +2,25 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   .message-list {
-    max-width: 500px;
-    width: 100%;
+    width: 30vw;
+    height: 50vh;
   }
 
   .message-container {
-    display: flex;
-    flex-direction: row;
-    padding: 0.5rem;
-    border-bottom: 1px solid #eeeeee;
+    width: 30vw;
+    height: 50vh;
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+
+  .message {
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    padding: 15px;
   }
 
   .user,

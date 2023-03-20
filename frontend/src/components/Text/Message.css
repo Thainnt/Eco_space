@@ -1,0 +1,20 @@
+.message-container {
+  width: 30vw;
+  height: 50vh;
+  background-color: #fff;
+  padding: 20px;
+  overflow-y: scroll;
+}
+.message__container > * {
+  margin-bottom: 10px;
+}
+
+.message {
+  background-color: rgb(194, 243, 194);
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
+  font-size: 15px;
+  margin-bottom: 10px;
+}

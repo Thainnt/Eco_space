@@ -1,4 +1,3 @@
-import Button from "@mui/material/Button";
 import { Wrapper } from "../styles/Wrapper.styled";
 import { dataContext } from "../../Hooks/ContextProvider";
 import { useContext } from "react";

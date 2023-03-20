@@ -1,17 +1,15 @@
 import{ Link } from "react-router-dom";
 import axios from "axios";
-import { dataContext } from "../../Hooks/ContextProvider";
-import { useContext } from "react";
-import { MyArrow } from "../styles/Button.styled";
+// import { dataContext } from "../../Hooks/ContextProvider";
+// import { useContext } from "react";
 import { Container } from "../styles/Container.styled";
-import { Card, Button} from 'react-bootstrap';
 
 
 
 export default function ItemList(props) {
-  const { navigate } = useContext(dataContext)
-  const { itemsByCategory, title, is_userDashboard } = props;
-  const handleClick = () => navigate(-1);
+  // const { navigate } = useContext(dataContext);
+  const { itemsByCategory } = props;
+  // const handleClick = () => navigate(-1);
   const myStyles = {
     width:"350px",
     height:"350px"
